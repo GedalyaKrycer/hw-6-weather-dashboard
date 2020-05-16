@@ -11,15 +11,8 @@ Global
 ——————————————————————————————————————————————————*/
 h1 {
     font-family: 'Inter', sans-serif;
-    font-weight: 200;
-}
-
-aside {
-    background-color: red;
-}
-
-section {
-    background-color: green;
+    font-weight: bolder;
+    color: #9381ff;
 }
 
 /* Resets margins for level */
@@ -33,6 +26,34 @@ Header
 ——————————————————————————————————————————————————*/
 .header-style {
     padding: 10px 10px;
-    border-bottom: solid 1px rgb(231, 231, 231);
-    margin-bottom: 12px !important;
+    border-bottom: solid 1px rgb(240, 239, 239);
+    /* force specificity override for the Bulma level class */
+    margin-bottom: 12px !important;  
+}
+
+
+
+/*——————————————————————————————————————————————————  
+Locations
+——————————————————————————————————————————————————*/
+.locations--bg {
+    height: 100vh;
+    background: rgb(168,87,209);
+    background: -moz-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
+    background: linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a857d1",endColorstr="#9381ff",GradientType=1);
+}
+
+
+
+/*——————————————————————————————————————————————————  
+Results
+——————————————————————————————————————————————————*/
+.results--bg {
+    background: rgb(239,236,255);
+    background: -moz-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
+    background: linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#efecff",endColorstr="#fcfbff",GradientType=1);  
 }
