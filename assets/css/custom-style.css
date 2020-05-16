@@ -7,12 +7,12 @@ font-family: 'Montserrat', sans-serif;
 
 
 /*——————————————————————————————————————————————————  
-Global
+Global / Modifiers
 ——————————————————————————————————————————————————*/
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: bolder;
-    color: #9381ff;
+    color: #44388a;
     font-size: 1.1rem;
     align-self: center;
 }
@@ -26,21 +26,10 @@ p {
     margin: 0;
 }
 
-/* Resets Bulma Font Sizes */
-.input,
-.button {
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
+.full-percent-height {
+    height: 100%;
 }
 
-.button {
-    background-color: #a857d1;
-    border-color: #a857d1;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    min-width: 100px;
-}
 
 
 
@@ -54,6 +43,41 @@ Header
     /* force specificity override for the Bulma level class */
     margin-bottom: 12px !important;  
 }
+
+
+/* Resets Bulma Font Sizes */
+.input,
+.button {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0;
+    transition: .5s;
+}
+
+.button {
+    background-color: #a857d1;
+    border-color: #a857d1;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.button:hover {
+    background-color: #44388a;
+    border-color: #44388a;
+    color: white;
+    transition: .5s;
+}
+
+.input:focus {
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    border-color: white;
+    font-size: 20px;
+    transition: .5s;
+}
+
+
 
 
 
