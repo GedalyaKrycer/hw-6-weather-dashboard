@@ -218,8 +218,12 @@ Media Queries
         font-size: 1.4rem;
     }
 
+    h2 {
+        font-size: 2rem;
+    }
+
     h5 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         margin-top: 10px;
     }
 
