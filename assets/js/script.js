@@ -19,18 +19,23 @@ $("#citySubmit").on("click", function() {
 
 // Event Listener for Enter Key on Input
 $("#citySearch").keypress(function(e) {
-
+    // Checks if the key was Enter
     if(e.which == 13) {
         //  Runs function to call OW API
         weatherSearch();
     }
-    return false; 
+    // return false; 
 });
 
 
 // Function that sends the AJAX Requests to the OW API
 function weatherSearch() {
 
+    // Hide Intro Text
+    $("#introTxt").removeClass("display").addClass("is-hidden")
+
+    // Show Results from OW API
+    $("#cityInfo").removeClass("is-hidden").addClass("display")
 
 
     // Ajax Request for the current day weather

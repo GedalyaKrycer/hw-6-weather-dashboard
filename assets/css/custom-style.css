@@ -17,7 +17,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     color: #44388a;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     align-self: center;
     text-transform: uppercase;
     line-height: 1.1;
@@ -102,21 +102,17 @@ p {
 Header
 ——————————————————————————————————————————————————*/
 .header-style {
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-bottom: solid 1px rgb(240, 239, 239);
     /* force specificity override for the Bulma level class */
     margin-bottom: 12px !important;  
 }
 
-.header__search {
-    /* max-width: 1000px; */
-
-}
 
 /* Resets Bulma Font Sizes */
 .input,
 .button {
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
     border-radius: 0;
     transition: .5s;
@@ -147,7 +143,7 @@ Header
 .input:focus {
     box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.15);
     border-color: white;
-    font-size: 20px;
+    font-size: 22px;
     transition: .5s;
 }
 
@@ -211,9 +207,13 @@ Results
     padding: 40px;
 }
 
-/* .uv {
-    align-items: center;
-} */
+.intro-text {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px 0px;
+    font-weight: 600;
+    font-size: 2rem;
+}
 
 .uv--favorable,
 .uv--moderate,
