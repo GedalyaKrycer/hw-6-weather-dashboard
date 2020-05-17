@@ -36,3 +36,5 @@ I took the project a step further by re-imaging the layout and design, but still
 * Adding a "Clear All" button to remove all locations
 * Refining layout for the 5 Day Forecast columns, so they wrap at a larger breakpoint 
 * Adding in the local storage feature
+* Running HTML, CSS, JS through validators
+* Fixing the 5 Day Weather Forecast Dates to be Unique. (Ordinal UNIX API data being pulled is unique, but when running through a converter function, it breaks.)

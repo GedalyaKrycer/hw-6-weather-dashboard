@@ -3,17 +3,17 @@ var owKey = "6b0f83d2f817a4a623181896ec6d38d0";
 
 
 // Unix Time Converter Modified From Stack Overflow
-function timeConverter(UNIX_timestamp){
+function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
     var time = month + ' / ' + date + ' / ' + year;
     return time;
-  }
+};
  
-
+var savedLocations = [];
 
 // ————————————————————————————————————————————————————————————————————
 // Current Weather
@@ -41,7 +41,15 @@ function weatherSearch() {
 
     // Captures user's entry into the city variable
     var city = $("#citySearch").val().trim();
-    localStorage.setItem("city", JSON.stringify(city))
+
+    // Save values to an array
+    savedLocations.push(city);
+
+    // Stores it locally
+    localStorage.setItem("savedLocations", JSON.stringify(savedLocations));
+
+    // Saves the location on the screen and in local storage
+    saveLocation(city);
 
     // Clears the value in the input
     $("#citySearch").val("");
@@ -56,8 +64,7 @@ function weatherSearch() {
     $("#cityInfo").removeClass("is-hidden").addClass("display")
     $("#foreSection").removeClass("is-hidden").addClass("display")
 
-    // Saves the location on the screen and in local storage
-    saveLocation(city)
+    
 
     // API URL Build for the main weather display
     var curWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
@@ -152,7 +159,7 @@ function weatherSearch() {
         var fList = forecast.list;
 
         // This custom array selects one from each day
-        var forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36],];
+        var forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36]];
 
         // For Loop stores the API Data and builds it on the HTML Page
         for (let i = 0; i < forecastArr.length; i++) {
@@ -181,8 +188,8 @@ function weatherSearch() {
     });
 }
 
-function saveLocation(location) {
 
+function saveLocation(location) {
     // HTML Build Each Location Button
     $("#locationContainer").append(`
         <button class="button locations__btn">
@@ -191,6 +198,15 @@ function saveLocation(location) {
         </button>
     `);
 };
+
+// EVENT LISTENER 
+$(".locations__btn").click(function() {
+    console.log("Hello");
+
+});
+
+
+
 
 
 
