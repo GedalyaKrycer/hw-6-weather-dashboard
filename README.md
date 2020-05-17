@@ -2,7 +2,7 @@
 Weather dashboard for major cities
 
 ## Goal 
-Create a website that uses the [Open Weather API](https://openweathermap.org/api) to display the current weather and a 5 day forecast, based on the location a user inputs. Submitted locations are also saved to local storage and displayed in section on the site, to pull up their information at a later time. 
+Create a website that uses the [Open Weather API](https://openweathermap.org/api) to display the current weather and a 5 day forecast, based on the location a user inputs. Submitted locations are also to be saved to local storage and displayed in section on the site, pulling up their information at a later time. 
 
 I took the project a step further by re-imaging the layout and design, but still using the fundamental features that were given. 
 
@@ -35,3 +35,4 @@ I took the project a step further by re-imaging the layout and design, but still
 * Adding a "Clear" **x** button to remove individual saved locations 
 * Adding a "Clear All" button to remove all locations
 * Refining layout for the 5 Day Forecast columns, so they wrap at a larger breakpoint 
+* Adding in the local storage feature
