@@ -11,6 +11,11 @@ Global / Modifiers
 ——————————————————————————————————————————————————*/
 body {
     font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
 }
 
 h1 {
@@ -84,9 +89,9 @@ p {
 
 .mf-center {
     margin: 0 auto;
-    display: flex;
+    display: flex; 
     justify-content: center;
-}
+} 
 
 .display {
     display: block;
@@ -94,6 +99,10 @@ p {
 
 .flex {
     display: flex;
+}
+
+img {
+    height: auto;
 }
 
 
@@ -202,7 +211,7 @@ Locations
 Results
 ——————————————————————————————————————————————————*/
 .results--bg {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     padding: 20px 20px;
     background: rgb(239,236,255);
@@ -252,6 +261,12 @@ Results
     background-color: rgb(240, 55, 22);
 }
 
+.forecast-container {
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+}
+
 .forecast__title {
     margin: 40px 0 20px;
     font-size: 2.2rem;
@@ -266,6 +281,15 @@ Results
     font-weight: bold;
     margin-top: 5px;
 }
+
+.forecast__description {
+    margin-top: -10px;
+}
+
+.forecast__container {
+    margin: 0 auto;
+    text-align: center;
+} 
 
 
 

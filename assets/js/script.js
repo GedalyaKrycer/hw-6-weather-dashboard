@@ -167,10 +167,10 @@ function weatherSearch() {
             // HTML Build for each day
             $("#foreContent").append(`
             <div class="column">
-                <div class="box">
+                <div class="box forecast__container">
                     <h3 class="forecast__date">${timeConverter(foreDate)}</h3>
                     <img src="https://openweathermap.org/img/wn/${foreIcon}.png" alt="Weather Status Icon">
-                    <p>${foreDesc}</p>
+                    <p class="forecast__description">${foreDesc}</p>
                     <p class="forecast__value">Temp: ${Math.floor(foreTemp)}°F</p>
                     <p class="forecast__value">Humidity: ${Math.floor(foreHumidity)}%</p>
 
