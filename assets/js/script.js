@@ -54,7 +54,11 @@ function weatherSearch() {
     $("#cityInfo").removeClass("is-hidden").addClass("display")
     $("#foreSection").removeClass("is-hidden").addClass("display")
 
-    var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
+    // Saves the location on the screen and in local storage
+    saveLocation()
+
+    // API URL Build for the main weather display
+    var curWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
 
     // Ajax Request for the current day weather
     $.ajax({
@@ -69,7 +73,7 @@ function weatherSearch() {
         var curWeatherIcon = response.weather[0].icon;
 
         // Adds the icon image to the html
-        $("#cityWeatherIcon").attr("src", "http://openweathermap.org/img/wn/" + curWeatherIcon + ".png")
+        $("#cityWeatherIcon").attr("src", "https://openweathermap.org/img/wn/" + curWeatherIcon + ".png")
 
         // Variable For Current Weather Description
         var iconDes = response.weather[0].description;
@@ -103,7 +107,7 @@ function weatherSearch() {
         var lonVal = response.coord.lon;
 
         // Url for UV i Ajax Call
-        var uviQueryUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
+        var uviQueryUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
 
         // Nested UV i Ajax Call
         $.ajax({
@@ -130,14 +134,12 @@ function weatherSearch() {
             } else {
                 $("#uvInValue").removeClass("uv--favorable uv--moderate uv--high uv--severe").addClass("uv--severe");
             }
-
         });
-
     });
 
 
     // Query URL for 5 Day Forecast
-    var forecastQueryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + owKey + "&units=imperial";
+    var forecastQueryUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + owKey + "&units=imperial";
 
     $.ajax({
         url: forecastQueryUrl,
@@ -163,12 +165,12 @@ function weatherSearch() {
             var foreTemp = forecast.list[i].main.temp;
             var foreHumidity = forecast.list[i].main.humidity;
 
-            // HTML Build
+            // HTML Build for each day
             $("#foreContent").append(`
             <div class="column">
                 <div class="box">
                     <h3 class="forecast__date">${timeConverter(foreDate)}</h3>
-                    <img src="http://openweathermap.org/img/wn/${foreIcon}.png" alt="Weather Status Icon">
+                    <img src="https://openweathermap.org/img/wn/${foreIcon}.png" alt="Weather Status Icon">
                     <p>${foreDesc}</p>
                     <p class="forecast__value">Temp: ${Math.floor(foreTemp)}°F</p>
                     <p class="forecast__value">Humidity: ${Math.floor(foreHumidity)}%</p>
@@ -176,13 +178,13 @@ function weatherSearch() {
                 </div>
             </div>
             `);
-            
         }
-
     });
-
-
 }
+
+function saveLocation() {
+    console.log("Test Save Location");
+};
 
 
 
