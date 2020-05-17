@@ -1,5 +1,4 @@
-console.log("hello world")
-
+// Open Weather API Resources 
 var owKey = "6b0f83d2f817a4a623181896ec6d38d0";
 var city = "Las Vegas"
 
@@ -31,7 +30,11 @@ $.ajax({
     // Variable For Current Weather Description
     var iconDes = response.weather[0].description;
 
+    // Adds icon description to the html
     $("#iconDes").text(iconDes);
+
+    // moment.js Generated Date
+    $("#cityDate").text(moment().format("MMM Do YYYY"));
 
 });
 
