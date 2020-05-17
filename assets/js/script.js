@@ -33,8 +33,7 @@ $("#citySearch").keypress(function(e) {
     if(e.which == 13) {
         //  Runs function to call OW API
         weatherSearch();
-    }
-    // return false; 
+    } 
 });
 
 
@@ -46,6 +45,9 @@ function weatherSearch() {
 
     // Clears the value in the input
     $("#citySearch").val("");
+
+    // Clears Last Results
+    $("#foreContent").empty();
 
     // Hide Intro Text
     $("#introTxt").removeClass("display").addClass("is-hidden")
