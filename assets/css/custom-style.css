@@ -11,6 +11,7 @@ Global / Modifiers
 ——————————————————————————————————————————————————*/
 body {
     font-family: 'Inter', sans-serif;
+    height: 100vh;
 }
 
 main {
