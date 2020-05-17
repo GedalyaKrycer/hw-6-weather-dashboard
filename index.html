@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Weather Dashboard</title>
   <meta name="description" content="Find the weather and 5-day forecast for any city in the world.">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/custom-style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -35,9 +36,11 @@
     </div>
   </header>
 
-  <!-- Locations Section -->
   <main class="columns">
+    <!-- Locations Section -->
     <aside class="column locations--bg">
+
+      <!-- City Buttons Generate Here With JS -->
       <div id="cityContainer" class="locations__container">
         <button class="button locations__btn">
           <i class="fas fa-map-marker-alt locations__icon"></i>
@@ -48,7 +51,33 @@
 
     <!-- Results Section -->
     <section class="column results--bg">
-      <h2>Hello</h2>
+      <div class="box" id="cityInfo">
+
+        <!-- City Info Dynamically Generates Here -->
+        <h2 id="cityName">City Name <span id="cityWeatherIcon">Icon</span></h2>
+        <h3>(18/15/2020)</h3>
+
+        <!-- City Weather Info Dynamically Generates Here -->
+        <div class="columns">
+          <div class="column">
+            <h5 id="tempValue">99.90 °F</h5>
+            <h4>Temperature</h4>
+          </div>
+          <div class="column">
+            <h5 id="humidValue">41%</h5>
+            <h4>Humidity</h4>
+          </div>
+          <div class="column">
+            <h5 id="windSpValue">47 MPH</h5>
+            <h4>Wind Speed</h4>
+          </div>
+          <div class="column">
+            <h5 id="uvInValue">9.49</h5>
+            <h4>UV Index</h4>
+          </div>
+        </div>
+      </div>
+     
     </section>
   </main>
 
