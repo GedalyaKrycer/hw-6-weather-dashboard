@@ -55,7 +55,7 @@ function weatherSearch() {
     $("#foreSection").removeClass("is-hidden").addClass("display")
 
     // Saves the location on the screen and in local storage
-    saveLocation()
+    saveLocation(city)
 
     // API URL Build for the main weather display
     var curWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
@@ -145,15 +145,12 @@ function weatherSearch() {
         url: forecastQueryUrl,
         method: "GET"
     }).then(function(forecast) {
-        console.log(forecast);
         
         // This stores the array of 40 weather markers
         var fList = forecast.list;
 
         // This custom array selects one from each day
         var forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36],];
-
-        console.log(forecastArr);
 
         // For Loop stores the API Data and builds it on the HTML Page
         for (let i = 0; i < forecastArr.length; i++) {
@@ -182,8 +179,15 @@ function weatherSearch() {
     });
 }
 
-function saveLocation() {
-    console.log("Test Save Location");
+function saveLocation(location) {
+   
+    // HTML Build Each Location Button
+    $("#locationContainer").append(`
+        <button class="button locations__btn">
+          <i class="fas fa-map-marker-alt locations__icon"></i>
+          ${location}
+        </button>
+    `);
 };
 
 
