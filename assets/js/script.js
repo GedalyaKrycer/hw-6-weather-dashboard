@@ -2,11 +2,14 @@
 var owKey = "6b0f83d2f817a4a623181896ec6d38d0";
 var city = "Las Vegas"
 
+
 // ————————————————————————————————————————————————————————————————————
 // Current Weather
 // ————————————————————————————————————————————————————————————————————
 
 var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
+
+
 
 console.log(curWeatherQueryUrl);
 
@@ -53,6 +56,21 @@ $.ajax({
 
     // Adds Current Weather humidity to the html
     $("#windSpValue").text(`${windSpValue} MPH`);
+
+    // City Location From API Call
+    var latVal = response.coord.lat;
+    var lonVal = response.coord.lon;
+
+    // Url for UV Index Ajax Call
+    var uvIndexQueryUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
+
+    // Nested UV Index Ajax Call
+    $.ajax({
+        url: uvIndexQueryUrl,
+        method: "GET"
+    }).then(function(uv){
+        console.log(uv.value);
+    });
 
 });
 
