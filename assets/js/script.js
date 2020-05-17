@@ -6,7 +6,7 @@ var city = "Las Vegas"
 // Current Weather
 // ————————————————————————————————————————————————————————————————————
 
-var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey;
+var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
 
 console.log(curWeatherQueryUrl);
 
@@ -33,8 +33,14 @@ $.ajax({
     // Adds icon description to the html
     $("#iconDes").text(iconDes);
 
-    // moment.js Generated Date
+    // Adds moment.js Generated Date to the html
     $("#cityDate").text(moment().format("MMM Do YYYY"));
+
+    // Variable For Current Weather Temperature
+    var tempValue = Math.floor(response.main.temp);
+
+    // Adds Current Weather Temperature to the html
+    $("#tempValue").text(`${tempValue}°F`);
 
 });
 
