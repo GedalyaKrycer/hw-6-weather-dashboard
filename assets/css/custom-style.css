@@ -10,11 +10,13 @@ font-family: 'Montserrat', sans-serif;
 Global / Modifiers
 ——————————————————————————————————————————————————*/
 h1 {
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     color: #44388a;
     font-size: 1.1rem;
     align-self: center;
+    text-transform: uppercase;
 }
 
 p {
@@ -28,6 +30,14 @@ p {
 
 .full-percent-height {
     height: 100%;
+}
+
+.input::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+.flex-vertical-center {
+    align-self: center;
 }
 
 
@@ -60,7 +70,7 @@ Header
     color: white;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    min-width: 100px;
+    min-width: 120px;
 }
 
 .button:hover {
@@ -104,4 +114,23 @@ Results
     background: -webkit-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
     background: linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#efecff",endColorstr="#fcfbff",GradientType=1);  
+}
+
+
+
+/*—————————————————————————————————————————————————— 
+ —————————————————————————————————————————————————— 
+ —————————————————————————————————————————————————— 
+Media Queries
+—————————————————————————————————————————————————— 
+—————————————————————————————————————————————————— 
+——————————————————————————————————————————————————*/
+@media screen and (max-width: 768px) {
+    h1 {
+        text-align: center;
+        margin-bottom: -10px;
+        margin-top: 5px;
+        font-size: 1.4rem;
+
+    }
 }
