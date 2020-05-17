@@ -1,13 +1,13 @@
 // Open Weather API Resources 
 var owKey = "6b0f83d2f817a4a623181896ec6d38d0";
-var city = "Las Vegas"
+// var city = "Las Vegas"
 
 
 // ————————————————————————————————————————————————————————————————————
 // Current Weather
 // ————————————————————————————————————————————————————————————————————
 
-var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
+
 
 
 // Event Listener for Submit Button
@@ -31,12 +31,16 @@ $("#citySearch").keypress(function(e) {
 // Function that sends the AJAX Requests to the OW API
 function weatherSearch() {
 
+    var city = $("#citySearch").val();
+
+
     // Hide Intro Text
     $("#introTxt").removeClass("display").addClass("is-hidden")
 
     // Show Results from OW API
     $("#cityInfo").removeClass("is-hidden").addClass("display")
 
+    var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
 
     // Ajax Request for the current day weather
     $.ajax({
