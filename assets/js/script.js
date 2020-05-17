@@ -52,6 +52,7 @@ function weatherSearch() {
 
     // Show Results from OW API
     $("#cityInfo").removeClass("is-hidden").addClass("display")
+    $("#foreSection").removeClass("is-hidden").addClass("display")
 
     var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
 
@@ -144,14 +145,37 @@ function weatherSearch() {
     }).then(function(forecast) {
         console.log(forecast);
         
+        // This stores the array of 40 weather markers
         var fList = forecast.list;
 
+        // This custom array selects one from each day
         var forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36],];
 
         console.log(forecastArr);
 
+        // For Loop stores the API Data and builds it on the HTML Page
         for (let i = 0; i < forecastArr.length; i++) {
-            const element = array[i];
+
+            // Variables that store the API Data
+            var foreDate = forecast.list[i].dt;
+            var foreIcon = forecast.list[i].weather[0].icon;
+            var foreDesc = forecast.list[i].weather[0].description;
+            var foreTemp = forecast.list[i].main.temp;
+            var foreHumidity = forecast.list[i].main.humidity;
+
+            // HTML Build
+            $("#foreContent").append(`
+            <div class="column">
+                <div class="box">
+                    <h3 class="forecast__date">${timeConverter(foreDate)}</h3>
+                    <img src="http://openweathermap.org/img/wn/${foreIcon}.png" alt="Weather Status Icon">
+                    <p>${foreDesc}</p>
+                    <p class="forecast__value">Temp: ${Math.floor(foreTemp)}°F</p>
+                    <p class="forecast__value">Humidity: ${Math.floor(foreHumidity)}%</p>
+
+                </div>
+            </div>
+            `);
             
         }
 

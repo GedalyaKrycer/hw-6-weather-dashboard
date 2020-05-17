@@ -81,7 +81,7 @@
             <h3 id="cityDate">—</h3>
             <div class="columns">
               <div class="mf-center">
-                <img id="cityWeatherIcon">
+                <img id="cityWeatherIcon" alt="Weather status icon">
                 <p id="iconDes" class="flex-vertical-center"></p>
               </div>
             </div>
@@ -112,29 +112,14 @@
           </div>
 
         </div>
-        <div id="forecastSection">
+        <section id="foreSection" class="is-hidden">
           <h2 class="forecast__title">5 Day Forecast</h2>
-          <div class="columns is-desktop">
-            <div class="column">
-              <div class="box"></div>
-            </div>
-            <div class="column">
-              <div class="box"></div>
-            </div>
-            <div class="column">
-              <div class="box"></div>
-            </div>
-            <div class="column">
-              <div class="box"></div>
-            </div>
-            <div class="column">
-              <div class="box"></div>
-            </div>
-          </div>
+          <!-- Dynamically Generated Forecast Content will show here -->
+          <div class="columns is-desktop" id="foreContent"></div>
           
           
 
-        </div>
+        </section>
       </div>
 
 
