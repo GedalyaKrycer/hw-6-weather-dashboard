@@ -42,6 +42,19 @@
 
       <!-- City Buttons Generate Here With JS -->
       <div id="cityContainer" class="locations__container">
+        <h3 class="locations__header">Saved Cities:</h3>
+        <button class="button locations__btn">
+          <i class="fas fa-map-marker-alt locations__icon"></i>
+          New York
+        </button>
+        <button class="button locations__btn">
+          <i class="fas fa-map-marker-alt locations__icon"></i>
+          Las Vegas
+        </button>
+        <button class="button locations__btn">
+          <i class="fas fa-map-marker-alt locations__icon"></i>
+          New York
+        </button>
         <button class="button locations__btn">
           <i class="fas fa-map-marker-alt locations__icon"></i>
           New York
@@ -51,33 +64,54 @@
 
     <!-- Results Section -->
     <section class="column results--bg">
-      <div class="box" id="cityInfo">
+      <div class="container">
 
-        <!-- City Info Dynamically Generates Here -->
-        <h2 id="cityName">City Name <span id="cityWeatherIcon">Icon</span></h2>
-        <h3 id="cityDate">(18/15/2020)</h3>
+        <!-- Holds Current Weather Info-->
+        <div class="box">
 
-        <!-- City Weather Info Dynamically Generates Here -->
-        <div class="columns">
-          <div class="column">
-            <h5 id="tempValue">99.90 °F</h5>
-            <h4>Temperature</h4>
+          <!-- Initial Text -->
+          <h2 class="display is-hidden">Search for a city above to find its weather forcast.</h2>
+
+          <!-- Main Dynamic Generated Text -->
+          <div id="cityInfo">
+
+            <!-- City Info Dynamically Generates Here -->
+            <h2 id="cityName">City Name</h2>
+            <h3 id="cityDate">(18/15/2020)</h3>
+              <div class="columns">
+                <div class="mf-center">
+                  <img id="cityWeatherIcon" class="">
+                  <p id="iconDes" class="flex-vertical-center"></p>
+                </div>
+            </div>
+            
+           
+
+            <!-- City Weather Info Dynamically Generates Here -->
+            <div class="columns is-desktop">
+              <div class="column">
+                <h5 id="tempValue">99.90 °F</h5>
+                <h4>Temperature</h4>
+              </div>
+              <div class="column">
+                <h5 id="humidValue">41%</h5>
+                <h4>Humidity</h4>
+              </div>
+              <div class="column">
+                <h5 id="windSpValue">47 MPH</h5>
+                <h4>Wind Speed</h4>
+              </div>
+              <div class="column">
+                <h5 id="uvInValue">9.49</h5>
+                <h4>UV Index</h4>
+              </div>
+            </div>
           </div>
-          <div class="column">
-            <h5 id="humidValue">41%</h5>
-            <h4>Humidity</h4>
-          </div>
-          <div class="column">
-            <h5 id="windSpValue">47 MPH</h5>
-            <h4>Wind Speed</h4>
-          </div>
-          <div class="column">
-            <h5 id="uvInValue">9.49</h5>
-            <h4>UV Index</h4>
-          </div>
+
         </div>
       </div>
-     
+
+
     </section>
   </main>
 

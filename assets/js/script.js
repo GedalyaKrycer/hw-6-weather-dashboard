@@ -11,10 +11,27 @@ var curWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + c
 
 console.log(curWeatherQueryUrl);
 
+// Ajax Request for the current day weather
 $.ajax({
     url: curWeatherQueryUrl,
-    method: "GET" 
-}).then(function(response){
-    console.log(response.name);
-}); 
+    method: "GET"
+}).then(function (response) {
+    console.log(response);
+    console.log(response.weather[0].icon);
+
+    // Adds the City Name to the html
+    $("#cityName").text(response.name);
+
+    // Variable For Current Weather icon
+    var curWeatherIcon = response.weather[0].icon;
+
+    // Adds the icon image to the html
+    $("#cityWeatherIcon").attr("src", "http://openweathermap.org/img/wn/" + curWeatherIcon + ".png")
+
+    // Variable For Current Weather Description
+    var iconDes = response.weather[0].description;
+
+    $("#iconDes").text(iconDes);
+
+});
 

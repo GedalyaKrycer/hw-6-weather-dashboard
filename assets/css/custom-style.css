@@ -78,11 +78,23 @@ p {
     align-self: center;
 }
 
-.m-center {
+.mb-center {
     margin: 0 auto;
     display: block;
 }
 
+.mf-center {
+    margin: 0 auto;
+    display: flex;
+}
+
+.display {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
 
 
 /*——————————————————————————————————————————————————  
@@ -96,7 +108,8 @@ Header
 }
 
 .header__search {
-    max-width: 1000px;
+    /* max-width: 1000px; */
+
 }
 
 /* Resets Bulma Font Sizes */
@@ -153,6 +166,13 @@ Locations
 
 .locations__container {
     padding: 10px 20px;
+}
+
+.locations__header {
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+    opacity: .6;
 }
 
 .locations__btn {
