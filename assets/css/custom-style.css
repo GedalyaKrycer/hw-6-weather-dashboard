@@ -49,7 +49,7 @@ h4 {
 }
 
 h5 {
-    font-weight: 100;
+    font-weight: 200;
     color: #44388a;
     font-size: 3rem;
     line-height: 1.2;
@@ -211,6 +211,39 @@ Results
     padding: 40px;
 }
 
+/* .uv {
+    align-items: center;
+} */
+
+.uv--favorable,
+.uv--moderate,
+.uv--high,
+.uv--severe {
+    max-width: fit-content;
+    padding: 3px;
+    font-size: 1.8rem;
+    margin: 35px auto 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.uv--favorable {
+   background-color: rgb(40, 189, 57);
+}
+
+.uv--moderate {
+    background-color: rgb(226, 244, 39);
+    color: black;
+}
+
+.uv--high {
+    background-color: rgb(250, 139, 19);
+}
+
+.uv--severe {
+    background-color: rgb(240, 55, 22);
+}
+
 
 
 /*—————————————————————————————————————————————————— 
@@ -243,9 +276,13 @@ Media Queries
         font-size: 2rem;
     }
 
+    .uv--favorable,
+    .uv--moderate,
+    .uv--high,
+    .uv--severe,
     h5 {
         font-size: 2.2rem;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .locations--bg {

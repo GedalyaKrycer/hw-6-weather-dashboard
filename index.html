@@ -27,7 +27,7 @@
             <input class="input" type="text" placeholder="Search for a city…">
           </div>
           <div class="control">
-            <button class="button full-percent-height">
+            <button type="submit" class="button full-percent-height">
               Search
             </button>
           </div>
@@ -70,7 +70,7 @@
         <div class="box">
 
           <!-- Initial Text -->
-          <h2 class="display is-hidden">Search for a city above to find its weather forcast.</h2>
+          <h2 class="display is-hidden">Search for a city above to find its weather forecast.</h2>
 
           <!-- Main Dynamic Generated Text -->
           <div id="cityInfo">
@@ -94,17 +94,17 @@
               </div>
               <div class="column">
                 <!-- Dynamically Generated Humidly -->
-                <h5 id="humidValue">—%</h5>
+                <h5 id="humidValue">—</h5>
                 <h4>Humidity</h4>
               </div>
               <div class="column">
                 <!-- Dynamically Generated Window Speed -->
-                <h5 id="windSpValue">47 MPH</h5>
+                <h5 id="windSpValue">—</h5>
                 <h4>Wind Speed</h4>
               </div>
-              <div class="column">
+              <div class="column uv">
                 <!-- Dynamically Generated UV Value -->
-                <h5 id="uvInValue">9.49</h5>
+                <h5 id="uvInValue" class="uv--favorable">—</h5>
                 <h4>UV Index</h4>
               </div>
             </div>

@@ -70,6 +70,18 @@ $.ajax({
         method: "GET"
     }).then(function(uv){
         console.log(uv.value);
+        $("#uvInValue").text(uv.value);
+
+        if (uv.value < 3) {
+            $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--favorable" );
+        } else if (uv.value >= 3 && uv.value <= 5) {
+            $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--moderate" );
+        } else if (uv.value >= 6 && uv.value <= 7) {
+            $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--high" );
+        } else {
+            $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--severe" );
+        }
+    
     });
 
 });
