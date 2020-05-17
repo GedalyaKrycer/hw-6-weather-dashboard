@@ -69,15 +69,23 @@ $.ajax({
         url: uvIndexQueryUrl,
         method: "GET"
     }).then(function(uv){
-        console.log(uv.value);
+        
+        // Adds UV Index Values to the HTML
         $("#uvInValue").text(uv.value);
 
+        // If the UV Index is under 0-2 Show Green
         if (uv.value < 3) {
             $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--favorable" );
+
+            // If the UV Index is under 3-5 Show Yellow
         } else if (uv.value >= 3 && uv.value <= 5) {
             $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--moderate" );
+
+            // If the UV Index is under 6-7 Show Orange
         } else if (uv.value >= 6 && uv.value <= 7) {
             $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--high" );
+
+            // If the UV Index is over 7 Show Red
         } else {
             $("#uvInValue").removeClass( "uv--favorable uv--moderate uv--high uv--severe" ).addClass( "uv--severe" );
         }
