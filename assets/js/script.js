@@ -42,5 +42,17 @@ $.ajax({
     // Adds Current Weather Temperature to the html
     $("#tempValue").text(`${tempValue}°F`);
 
+    // Variable For Current Weather Humidity
+    var humidValue = Math.floor(response.main.humidity);
+
+    // Adds Current Weather Humidity to the html
+    $("#humidValue").text(`${humidValue}%`);
+
+    // Variable For Current Weather Window Speed
+    var windSpValue = Math.floor(response.wind.speed);
+
+    // Adds Current Weather humidity to the html
+    $("#windSpValue").text(`${windSpValue} MPH`);
+
 });
 
