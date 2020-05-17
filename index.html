@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/custom-style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard</title>
+  <meta name="description" content="Find the weather and 5-day forecast for any city in the world.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/custom-style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
-    <!-- Logo and Search -->
-    <header class="header-style">
-      <div class="columns">
-        <h1 class="column">Weather Dashboard</h1>
-        
-        <!-- search -->
-        <div class="column is-three-quarters flex-vertical-center">
-          <div class="field has-addons">
-            <div class="control is-expanded">
-              <input class="input" type="text" placeholder="Search for a city…">
-            </div>
-            <div class="control">
-              <button class="button full-percent-height">
-                Search
-              </button>
-            </div>
+</head>
+
+<body>
+
+  <!-- Logo and Search -->
+  <header class="header-style">
+    <div class="columns">
+      <h1 class="column">Weather Dashboard</h1>
+
+      <!-- search -->
+      <div class="column is-three-quarters flex-vertical-center">
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <input class="input" type="text" placeholder="Search for a city…">
+          </div>
+          <div class="control">
+            <button class="button full-percent-height">
+              Search
+            </button>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Locations Section -->
-    <main class="columns">
-      <aside class="column locations--bg">
-        <h2>Hello</h2>
-      </aside>
+  <!-- Locations Section -->
+  <main class="columns">
+    <aside class="column locations--bg">
+      <div id="cityContainer" class="locations__container">
+        <button class="button locations__btn">New York</button> 
+        <button class="button locations__btn">New York</button>
+        <button class="button locations__btn">New York</button>
+        <button class="button locations__btn">New York</button>
+        <button class="button locations__btn">New York</button>
+        <button class="button locations__btn">New York</button>
+      </div>
+    </aside>
 
-      <!-- Results Section -->
-      <section class="column is-three-quarters results--bg">
-        <h2>Hello</h2>
-      </section>
-    </main>
-  
-    <!-- Main JS -->
+    <!-- Results Section -->
+    <section class="column results--bg">
+      <h2>Hello</h2>
+    </section>
+  </main>
+
+  <!-- Main JS -->
   <script src="./assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>

@@ -9,14 +9,18 @@ font-family: 'Montserrat', sans-serif;
 /*——————————————————————————————————————————————————  
 Global / Modifiers
 ——————————————————————————————————————————————————*/
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 h1 {
-    /* font-family: 'Inter', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     color: #44388a;
     font-size: 1.1rem;
     align-self: center;
     text-transform: uppercase;
+    line-height: 1.1;
 }
 
 p {
@@ -39,8 +43,6 @@ p {
 .flex-vertical-center {
     align-self: center;
 }
-
-
 
 
 
@@ -71,11 +73,17 @@ Header
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     min-width: 120px;
+    white-space: normal;
 }
 
 .button:hover {
     background-color: #44388a;
     border-color: #44388a;
+    color: white;
+    transition: .5s;
+}
+
+.button:focus {
     color: white;
     transition: .5s;
 }
@@ -95,12 +103,26 @@ Header
 Locations
 ——————————————————————————————————————————————————*/
 .locations--bg {
-    height: 100vh;
     background: rgb(168,87,209);
     background: -moz-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
     background: linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a857d1",endColorstr="#9381ff",GradientType=1);
+    max-width: 300px;
+}
+
+.locations__container {
+    padding: 10px 20px;
+}
+
+.locations__btn {
+    display: block;
+    width: calc(100% + .75rem);
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.20);
+    border: none;
+    padding: 15px;
+    height: auto;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.20);
 }
 
 
@@ -109,11 +131,13 @@ Locations
 Results
 ——————————————————————————————————————————————————*/
 .results--bg {
+    height: 100vh;
+    width: 100%;
     background: rgb(239,236,255);
     background: -moz-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
     background: linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#efecff",endColorstr="#fcfbff",GradientType=1);  
+ 
 }
 
 
@@ -131,6 +155,14 @@ Media Queries
         margin-bottom: -10px;
         margin-top: 5px;
         font-size: 1.4rem;
+    }
 
+    .locations--bg {
+        max-width: 100%;
+    }
+
+    .locations__btn {
+        display: block;
+        width: 100%;
     }
 }
