@@ -54,8 +54,8 @@ Header
     border-bottom: solid 1px rgb(240, 239, 239);
     /* force specificity override for the Bulma level class */
     margin-bottom: 12px !important;  
+   
 }
-
 
 /* Resets Bulma Font Sizes */
 .input,
@@ -123,6 +123,10 @@ Locations
     padding: 15px;
     height: auto;
     border-bottom: solid 1px rgba(255, 255, 255, 0.20);
+}
+
+.locations__icon {
+    margin-right: 10px;
 }
 
 
