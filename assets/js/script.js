@@ -2,6 +2,20 @@
 var owKey = "6b0f83d2f817a4a623181896ec6d38d0";
 
 
+// Unix Time Converter Modified From Stack Overflow
+function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var time = month + ' / ' + date + ' / ' + year;
+    return time;
+  }
+ 
+
+
 // ————————————————————————————————————————————————————————————————————
 // Current Weather
 // ————————————————————————————————————————————————————————————————————
@@ -62,8 +76,8 @@ function weatherSearch() {
         // Adds icon description to the html
         $("#iconDes").text(iconDes);
 
-        // Adds moment.js Generated Date to the html
-        $("#cityDate").text(moment().format("MMM Do YYYY"));
+        // Adds the current Date to the html
+        $("#cityDate").text(timeConverter(response.dt));
 
         // Variable For Current Weather Temperature
         var tempValue = Math.floor(response.main.temp);
@@ -87,31 +101,31 @@ function weatherSearch() {
         var latVal = response.coord.lat;
         var lonVal = response.coord.lon;
 
-        // Url for UV Index Ajax Call
-        var uvIndexQueryUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
+        // Url for UV i Ajax Call
+        var uviQueryUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
 
-        // Nested UV Index Ajax Call
+        // Nested UV i Ajax Call
         $.ajax({
-            url: uvIndexQueryUrl,
+            url: uviQueryUrl,
             method: "GET"
         }).then(function (uv) {
 
-            // Adds UV Index Values to the HTML
+            // Adds UV i Values to the HTML
             $("#uvInValue").text(uv.value);
 
-            // If the UV Index is under 0-2 Show Green
+            // If the UV i is under 0-2 Show Green
             if (uv.value < 3) {
                 $("#uvInValue").removeClass("uv--favorable uv--moderate uv--high uv--severe").addClass("uv--favorable");
 
-                // If the UV Index is under 3-5 Show Yellow
+                // If the UV i is under 3-5 Show Yellow
             } else if (uv.value >= 3 && uv.value <= 5) {
                 $("#uvInValue").removeClass("uv--favorable uv--moderate uv--high uv--severe").addClass("uv--moderate");
 
-                // If the UV Index is under 6-7 Show Orange
+                // If the UV i is under 6-7 Show Orange
             } else if (uv.value >= 6 && uv.value <= 7) {
                 $("#uvInValue").removeClass("uv--favorable uv--moderate uv--high uv--severe").addClass("uv--high");
 
-                // If the UV Index is over 7 Show Red
+                // If the UV i is over 7 Show Red
             } else {
                 $("#uvInValue").removeClass("uv--favorable uv--moderate uv--high uv--severe").addClass("uv--severe");
             }
@@ -129,8 +143,22 @@ function weatherSearch() {
         method: "GET"
     }).then(function(forecast) {
         console.log(forecast);
+        
+        var fList = forecast.list;
+
+        var forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36],];
+
+        console.log(forecastArr);
+
+        for (let i = 0; i < forecastArr.length; i++) {
+            const element = array[i];
+            
+        }
+
     });
 
 
 }
+
+
 
