@@ -18,13 +18,13 @@
   <!-- Logo and Search -->
   <header class="header-style">
     <div class="columns">
-      <h1 class="column">Weather Dashboard</h1>
+      <a class="column title-center" href="/index.html"><h1>Weather Forecaster</h1></a>
 
       <!-- search -->
       <div class="column is-three-quarters flex-vertical-center header__search">
         <div class="field has-addons">
           <div class="control is-expanded">
-            <input id="citySearch" class="input" type="text" placeholder="Search for a country, state, city or zip…">
+            <input id="citySearch" class="input" type="text" placeholder="Enter a location here…">
           </div>
           <div class="control">
             <button id="citySubmit" type="submit" class="button full-percent-height">
@@ -42,7 +42,7 @@
 
       <!-- City Buttons Generate Here With JS -->
       <div id="cityContainer" class="locations__container">
-        <h3 class="locations__header">Saved Cities:</h3>
+        <h3 class="locations__header">Saved Locations:</h3>
         <button class="button locations__btn">
           <i class="fas fa-map-marker-alt locations__icon"></i>
           New York
@@ -70,20 +70,21 @@
         <div class="box">
 
           <!-- Initial Text -->
-          <h2 id="introTxt" class="display intro-text">Search above for a country, state, city or zip code to find its weather forecast.</h2>
+          <h2 id="introTxt" class="display intro-text">Search above for any country, state, city or zip code to find its
+            weather forecast.</h2>
 
           <!-- Main Dynamic Generated Text -->
           <div id="cityInfo" class="is-hidden">
 
             <!-- City Info Dynamically Generates Here -->
-            <h2 id="cityName">City Name</h2>
-            <h3 id="cityDate">(18/15/2020)</h3>
-              <div class="columns">
-                <div class="mf-center">
-                  <img id="cityWeatherIcon">
-                  <p id="iconDes" class="flex-vertical-center"></p>
-                </div>
+            <h2 id="cityName">Please enter a valid country, state, city or zip code above.</h2>
+            <h3 id="cityDate">—</h3>
+            <div class="columns">
+              <div class="mf-center">
+                <img id="cityWeatherIcon">
+                <p id="iconDes" class="flex-vertical-center"></p>
               </div>
+            </div>
 
             <!-- City Weather Info Dynamically Generates Here -->
             <div class="columns is-desktop">
@@ -109,6 +110,29 @@
               </div>
             </div>
           </div>
+
+        </div>
+        <div id="forecastSection">
+          <h2 class="forecast__title">5 Day Forecast</h2>
+          <div class="columns is-desktop">
+            <div class="column">
+              <div class="box"></div>
+            </div>
+            <div class="column">
+              <div class="box"></div>
+            </div>
+            <div class="column">
+              <div class="box"></div>
+            </div>
+            <div class="column">
+              <div class="box"></div>
+            </div>
+            <div class="column">
+              <div class="box"></div>
+            </div>
+          </div>
+          
+          
 
         </div>
       </div>
