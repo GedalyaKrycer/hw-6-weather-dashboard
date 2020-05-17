@@ -9,7 +9,6 @@ function timeConverter(UNIX_timestamp){
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
-    var hour = a.getHours();
     var time = month + ' / ' + date + ' / ' + year;
     return time;
   }
@@ -41,7 +40,8 @@ $("#citySearch").keypress(function(e) {
 function weatherSearch() {
 
     // Captures user's entry into the city variable
-    var city = $("#citySearch").val();
+    var city = $("#citySearch").val().trim();
+    localStorage.setItem("city", JSON.stringify(city))
 
     // Clears the value in the input
     $("#citySearch").val("");
@@ -182,7 +182,7 @@ function weatherSearch() {
 }
 
 function saveLocation(location) {
-   
+
     // HTML Build Each Location Button
     $("#locationContainer").append(`
         <button class="button locations__btn">
