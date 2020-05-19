@@ -11,11 +11,13 @@ Global / Modifiers
 ——————————————————————————————————————————————————*/
 body {
     font-family: 'Inter', sans-serif;
-    height: 100vh;
 }
 
 main {
-    height: 100%;
+    min-height: calc(100vh - 93px);
+    align-items: stretch;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }
 
 h1 {
@@ -112,6 +114,7 @@ Header
 ——————————————————————————————————————————————————*/
 .header-style {
     padding: 20px 20px;
+    height: 93px;
     border-bottom: solid 1px rgb(240, 239, 239);
     /* force specificity override for the Bulma level class */
     margin-bottom: 12px !important;  
