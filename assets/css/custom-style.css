@@ -216,7 +216,7 @@ Results
 .results--bg {
     height: 100%;
     width: 100%;
-    padding: 20px 20px;
+    padding: 20px 30px 20px 20px;
     background: rgb(239,236,255);
     background: -moz-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(239,236,255,1) 0%, rgba(252,251,255,1) 100%);
@@ -347,4 +347,16 @@ Media Queries
         display: block;
         width: 100%;
     }
+
+    .input:focus {
+        box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.15);
+        border-color: white;
+        font-size: 20px;
+        transition: .5s;
+    }
+
+    .results--bg {
+        padding: 20px;
+    }
+
 }
