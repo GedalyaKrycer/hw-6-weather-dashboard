@@ -1,8 +1,8 @@
 # hw-6-weather-dashboard
 Weather dashboard for major cities
 
-##Deployed Site
-https://gedalyakrycer.github.io/hw-6-weather-dashboard/
+### [Deployed Site](https://gedalyakrycer.github.io/hw-6-weather-dashboard/)
+
 
 ## Goal 
 Create a website that uses the [Open Weather API](https://openweathermap.org/api) to display the current weather and a 5 day forecast, based on the location a user inputs. Submitted locations are also to be saved to local storage and displayed in section on the site, pulling up their information at a later time. 
