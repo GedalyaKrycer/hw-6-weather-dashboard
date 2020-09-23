@@ -114,10 +114,10 @@ Header
 ——————————————————————————————————————————————————*/
 .header-style {
     padding: 20px 20px;
-    height: 93px;
+    min-height: 93px;
     border-bottom: solid 1px rgb(240, 239, 239);
     /* force specificity override for the Bulma level class */
-    margin-bottom: 12px !important;  
+    /* margin-bottom: 12px !important;   */
 }
 
 .title-center {
