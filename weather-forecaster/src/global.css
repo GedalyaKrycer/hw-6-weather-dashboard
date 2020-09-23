@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;600;700;900&family=Montserrat:wght@100;400;900&display=swap');
+
+/* ——————————————————————————————————————————————————————————————
+Variables 
+—————————————————————————————————————————————————————————————— */
+:root {
+  --primary-color: #44388a;
+  --primary-light-color: rgba(68, 56, 138, 0.4);
+  --secondary-color: #a857d1;
+  --text-grey-color: #4a4a4a;
+}
+
+/* ——————————————————————————————————————————————————————————————
+Base 
+—————————————————————————————————————————————————————————————— */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +24,67 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.g__full-percent-height {
+  height: 100%;
+}
+
+
+/* ——————————————————————————————————————————————————————————————
+Typography 
+—————————————————————————————————————————————————————————————— */
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+
+
+
+
+/* ——————————————————————————————————————————————————————————————
+Bulma Overrides  
+—————————————————————————————————————————————————————————————— */
+
+.input,
+.button {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0;
+    transition: .5s;
+}
+
+.button {
+    background-color: #a857d1;
+    border-color: #a857d1;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    min-width: 120px;
+    white-space: normal;
+}
+
+.button:hover {
+    background-color: #44388a;
+    border-color: #44388a;
+    color: white;
+    transition: .5s;
+}
+
+.button:focus {
+    color: white;
+    transition: .5s;
+}
+
+.input:focus {
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.15);
+    border-color: white;
+    font-size: 22px;
+    transition: .5s;
 }
