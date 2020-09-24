@@ -37,7 +37,7 @@ code {
 }
 
 .g__main-wrapper {
-  padding: 50px;
+  padding: 100px;
 }
 
 .g__sidebar-container {
@@ -45,10 +45,15 @@ code {
 }
 
 .g__results-container {
+  padding: 50px;
   background: white;
   border-radius: 15px;
-background:var(--secondary-color);
-box-shadow:  16px 16px 32px #760695, 
+  background:var(--secondary-color);
+  -webkit-box-shadow:  16px 16px 32px #760695, 
+             -16px -16px 32px #b00adf;
+  -moz-box-shadow:  16px 16px 32px #760695, 
+             -16px -16px 32px #b00adf;
+  box-shadow:  16px 16px 32px #760695, 
              -16px -16px 32px #b00adf;
 
 }
@@ -147,8 +152,12 @@ Mobile Styles
   }
   
   .input:focus {
-
     font-size: 18px;
+  }
+
+  .g__results-container {
+    padding: 30px;
+  
   }
 
 }
