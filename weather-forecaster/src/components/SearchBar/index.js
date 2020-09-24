@@ -11,7 +11,7 @@ function SearchBar() {
                             <input id="citySearch" className="input" type="text" placeholder="Enter a location here…" />
                         </div>
                         <div className="control">
-                            <button id="citySubmit" type="submit" className="button g__full-percent-height">
+                            <button id="citySubmit" type="submit" className="button g__full-percent-height search-bar__btn">
                                 Search
                         </button>
                         </div>

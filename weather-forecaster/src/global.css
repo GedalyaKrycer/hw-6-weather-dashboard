@@ -6,7 +6,7 @@ Variables
 :root {
   --primary-color: #44388a;
   --primary-light-color: rgba(68, 56, 138, 0.4);
-  --secondary-color: #a857d1;
+  --secondary-color: #9308ba;
   --text-grey-color: #4a4a4a;
 }
 
@@ -19,41 +19,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  background: rgb(168,87,209);
-  /* background: -moz-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
-  background: linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%); */
+  height: calc(100vh + 12px);
 
-  background: linear-gradient(177deg, #a857d1, #9381ff, #1a8ddb);
-    background-size: 800% 800%;
+  background: var(--secondary-color);
 
-    -webkit-animation: bgColorChange 55s ease infinite;
-    -moz-animation: bgColorChange 55s ease infinite;
-    -o-animation: bgColorChange 55s ease infinite;
-    animation: bgColorChange 55s ease infinite;
+
 }
 
-@-webkit-keyframes bgColorChange {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
-}
-@-moz-keyframes bgColorChange {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
-}
-@-o-keyframes bgColorChange {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
-}
-@keyframes bgColorChange {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -73,9 +45,12 @@ code {
 }
 
 .g__results-container {
-    background: white;
-    border-radius: 10px;
-    box-shadow: ;
+  background: white;
+  border-radius: 15px;
+background:var(--secondary-color);
+box-shadow:  16px 16px 32px #760695, 
+             -16px -16px 32px #b00adf;
+
 }
 
 
@@ -86,7 +61,6 @@ Typography
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  /* color: var(--primary-color); */
   color: white;
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -105,35 +79,42 @@ Bulma Overrides
 .button {
     font-size: 16px;
     font-family: 'Inter', sans-serif;
-    border-radius: 0;
     transition: .5s;
 }
 
-.button {
-    background-color: #a857d1;
-    border-color: #a857d1;
+.input {
+    padding-left: 20px; 
+    background: #c379d8;
+    border: none;
     color: white;
-    font-family: 'Inter', sans-serif;
     font-weight: bold;
-    min-width: 120px;
-    white-space: normal;
-}
-
-.button:hover {
-    background-color: #44388a;
-    border-color: #44388a;
-    color: white;
+    border-right: white solid 3px;
     transition: .5s;
 }
 
-.button:focus {
-    color: white;
+.input:hover {
+    border-right: white solid 3px;
     transition: .5s;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.657) !important; 
+  font-weight: normal;
+  
 }
 
 .input:focus {
-    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.15);
-    border-color: white;
-    font-size: 22px;
-    transition: .5s;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.35);
+  border-color: white;
+  font-size: 22px;
+  transition: .5s;
+}
+
+.button {
+  border: none;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  min-width: 120px;
+  white-space: normal;
 }
