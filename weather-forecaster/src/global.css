@@ -5,7 +5,7 @@ Variables
 —————————————————————————————————————————————————————————————— */
 :root {
   --primary-color: #df8e67;
-  --primary-light-color: rgba(68, 56, 138, 0.4);
+  --primary-light-color: rgba(223, 143, 103, 0.3);
   --secondary-color: #9308ba;
   --text-grey-color: #4a4a4a;
 }
@@ -78,6 +78,12 @@ h2 {
   line-height: 1.1;
 }
 
+h3 {
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: white;
+}
+
 
 
 
@@ -138,16 +144,23 @@ Bulma Overrides
 /* ===========================================================
 Mobile Styles  
 =========================================================== */
-@media screen and (max-width: 768px) {
-    
+@media screen and (max-width: 1110px) {
+  .g__main-wrapper  {
+    flex-direction: column;
+  }
+  .g__sidebar-container {
+    max-width: 100%;
+  }
   .g__main-wrapper {
     padding: 30px;
   }
 
-  .g__sidebar-container {
-    max-width: 100%;
-  }
+} 
 
+
+@media screen and (max-width: 768px) {
+    
+  
   .button {
     border: none;
     color: white;

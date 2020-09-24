@@ -15,22 +15,22 @@ function CurrentTemp() {
                     </div>
                 </div>
             </div>
-            <div className="columns">
+            <div className="columns current-temp__details-container">
                 <div className="column">
-                    <h3>97°F</h3>
-                    <p className="current-temp__label">Temperature</p>
+                    <h3>97<sup className="current-temp__details-metric">°F</sup></h3>
+                    <p className="current-temp__details-label">Temperature</p>
                 </div>
                 <div className="column">
-                    <h3>10%</h3>
-                    <p className="current-temp__label">Humidity</p>
+                    <h3>10<sup className="current-temp__details-metric">%</sup></h3>
+                    <p className="current-temp__details-label">Humidity</p>
                 </div>
                 <div className="column">
-                    <h3>8 MPH</h3>
-                    <p className="current-temp__label">Temperature</p>
+                    <h3>8<sup className="current-temp__details-metric">MPH</sup></h3>
+                    <p className="current-temp__details-label">Wind Speed</p>
                 </div>
                 <div className="column">
                     <h3>7.28</h3>
-                    <p className="current-temp__label">UV Index</p>
+                    <p className="current-temp__details-label">UV Index</p>
                 </div>
 
             </div>

@@ -24,10 +24,10 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1110px) {
     
     .side-bar__logo {
-       margin: 0 auto;
+       margin: 30px 0;
        max-width: 100%;
        text-align: center;
     }
