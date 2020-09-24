@@ -2,22 +2,36 @@
     max-width: 50px;
 }
 
-.sidebar__logo--one {
+.side-bar__logo span {
     display: block;
+    width: 100%;
+}
+
+.sidebar__logo--one {
     opacity: .35;
 }
 
 .sidebar__logo--two {
-    display: block;
     opacity: .5;
 }
 
 .sidebar__logo--three {
-    display: block;
     opacity: .65;
 }
 
 .sidebar__logo--four {
-    display: block;
     opacity: .85;
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .side-bar__logo {
+       margin: 0 auto;
+       max-width: 100%;
+       text-align: center;
+    }
+
+   
+    
 }

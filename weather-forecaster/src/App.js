@@ -8,7 +8,7 @@ import SidebarWrapper from './components/SidebarWrapper';
 function App() {
   return (
     <>
-      <main className="columns g__main-wrapper">
+      <main className="columns is-desktop g__main-wrapper">
         <section className="column g__sidebar-container">
           <SidebarWrapper>
             <LocationHistory />

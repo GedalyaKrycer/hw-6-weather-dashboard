@@ -118,3 +118,37 @@ Bulma Overrides
   min-width: 120px;
   white-space: normal;
 }
+
+
+
+
+
+
+/* ===========================================================
+Mobile Styles  
+=========================================================== */
+@media screen and (max-width: 768px) {
+    
+  .g__main-wrapper {
+    padding: 30px;
+  }
+
+  .g__sidebar-container {
+    max-width: 100%;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    min-width: 70px;
+    white-space: normal;
+  }
+  
+  .input:focus {
+
+    font-size: 18px;
+  }
+
+}
