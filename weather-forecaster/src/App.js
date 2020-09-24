@@ -15,7 +15,7 @@ function App() {
           </SidebarWrapper>
 
         </section>
-        <section className="column g__results-container">
+        <section className="column g__results-container container">
           <SearchBar />
           <CurrentTemp />
           <FiveDayForecast />
