@@ -1,0 +1,23 @@
+.side-bar__logo {
+    max-width: 50px;
+}
+
+.sidebar__logo--one {
+    display: block;
+    opacity: .35;
+}
+
+.sidebar__logo--two {
+    display: block;
+    opacity: .5;
+}
+
+.sidebar__logo--three {
+    display: block;
+    opacity: .65;
+}
+
+.sidebar__logo--four {
+    display: block;
+    opacity: .85;
+}

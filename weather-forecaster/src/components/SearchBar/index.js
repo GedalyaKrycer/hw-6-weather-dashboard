@@ -5,9 +5,6 @@ function SearchBar() {
     return (
         <header className="search-bar__header">
             <div className="columns">
-                <div className="column is-one-fifth">
-                    <h1 className="search-bar__logo">Weather Forecaster</h1>
-                </div>
                 <div className="column">
                     <div className="field has-addons">
                         <div className="control is-expanded">

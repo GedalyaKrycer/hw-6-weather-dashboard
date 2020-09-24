@@ -19,6 +19,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background: rgb(168,87,209);
+  /* background: -moz-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%);
+  background: linear-gradient(0deg, rgba(168,87,209,1) 0%, rgba(147,129,255,1) 100%); */
+
+  background: linear-gradient(177deg, #a857d1, #9381ff, #1a8ddb);
+    background-size: 800% 800%;
+
+    -webkit-animation: bgColorChange 55s ease infinite;
+    -moz-animation: bgColorChange 55s ease infinite;
+    -o-animation: bgColorChange 55s ease infinite;
+    animation: bgColorChange 55s ease infinite;
+}
+
+@-webkit-keyframes bgColorChange {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@-moz-keyframes bgColorChange {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@-o-keyframes bgColorChange {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@keyframes bgColorChange {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
 }
 
 code {
@@ -30,6 +64,20 @@ code {
   height: 100%;
 }
 
+.g__main-wrapper {
+  padding: 50px;
+}
+
+.g__sidebar-container {
+    max-width: 250px;
+}
+
+.g__results-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: ;
+}
+
 
 /* ——————————————————————————————————————————————————————————————
 Typography 
@@ -38,7 +86,8 @@ Typography
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: white;
   font-size: 1.3rem;
   text-transform: uppercase;
   line-height: 1.1;
