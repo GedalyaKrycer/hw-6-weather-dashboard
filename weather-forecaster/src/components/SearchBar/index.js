@@ -2,17 +2,28 @@ import React from 'react';
 import './style.css';
 import { FaGithub } from 'react-icons/fa';
 
-function SearchBar() {
+function SearchBar({searchValue, submitSearch}) {
+
     return (
         <header className="search-bar__header">
             <div className="columns">
                 <div className="column is-8">
                     <div className="field has-addons">
                         <div className="control is-expanded">
-                            <input id="citySearch" className="input" type="text" placeholder="Search a location…" />
+                            <input
+                                id="citySearch"
+                                className="input"
+                                type="text"
+                                placeholder="Search a location…"
+                                ref={searchValue}
+                            />
                         </div>
                         <div className="control">
-                            <button id="citySubmit" type="submit" className="button g__full-percent-height search-bar__btn">
+                            <button
+                                id="citySubmit"
+                                type="submit"
+                                className="button g__full-percent-height search-bar__btn"
+                                onClick={submitSearch}>
                                 Search
                         </button>
                         </div>
