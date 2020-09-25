@@ -10,8 +10,8 @@
 .forecast__container {
     border-radius: 15px;
     background: #9308ba;
-    box-shadow:  16px 16px 32px #7d079e, 
-    -16px -16px 32px #a909d6;
+    box-shadow:  7px 7px 25px #7d079e, 
+    -7px -7px 25px #a909d6;
     min-width: 280px;
     margin: 0 auto;
     color: var(--secondary-color);
@@ -47,8 +47,6 @@
     color: var(--secondary-color);
 
 }
-
-
 
 
 

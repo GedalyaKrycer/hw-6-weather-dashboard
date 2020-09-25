@@ -5,10 +5,9 @@ Variables
 —————————————————————————————————————————————————————————————— */
 :root {
   --primary-color: #9308ba;
-  /* --primary-color: #df8e67; */
   --primary-dark-color: #8b09af;
-  --primary-light-color: rgba(223, 143, 103, 0.3);
   --secondary-color: #df8e67;
+  --secondary-light-color: rgba(223, 143, 103, 0.3);
 
 }
 
@@ -89,7 +88,7 @@ h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.7rem;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-weight: normal;
   margin-top: 4rem;
 }

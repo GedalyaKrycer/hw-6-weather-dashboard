@@ -33,44 +33,55 @@ function FiveDayForecast() {
                 </div>
                 <div className="column">
                     <div className="forecast__container">
-                        <h5>Sep / 25 / 2020</h5>
-                        <img
-                            src="https://openweathermap.org/img/wn/01d.png"
-                            alt="Weather status icon"
-                            className="g__temp-status-img" />
-                        <p>Clear Sky</p>
+                        <div className="forecast__header">
+                            <h5>Sep / 25 / 2020</h5>
+                        </div>
+                        <div className="forecast__body">
+                            <img
+                                src="https://openweathermap.org/img/wn/01d.png"
+                                alt="Weather status icon"
+                                className="g__temp-status-img" />
+                            <p>Clear Sky</p>
 
-                        <div className="forecast__meta-container">
-                            <h3>61<sup className="g__details-metric">°F</sup></h3>
-                            <p className="g__details-label">Temperature</p>
+                            <div className="forecast__meta-container">
+                                <h3>61<sup className="g__details-metric">°F</sup></h3>
+                                <p className="g__details-label">Temperature</p>
+                            </div>
+
+                            <div className="forecast__meta-container">
+                                <h3>20<sup className="g__details-metric">%</sup></h3>
+                                <p className="g__details-label">Humidity</p>
+                            </div>
                         </div>
 
-                        <div className="forecast__meta-container">
-                            <h3>20<sup className="g__details-metric">%</sup></h3>
-                            <p className="g__details-label">Humidity</p>
-                        </div>
                     </div>
                 </div>
                 <div className="column">
                     <div className="forecast__container">
-                        <h5>Sep / 25 / 2020</h5>
-                        <img
-                            src="https://openweathermap.org/img/wn/01d.png"
-                            alt="Weather status icon"
-                            className="g__temp-status-img" />
-                        <p>Clear Sky</p>
+                        <div className="forecast__header">
+                            <h5>Sep / 25 / 2020</h5>
+                        </div>
+                        <div className="forecast__body">
+                            <img
+                                src="https://openweathermap.org/img/wn/01d.png"
+                                alt="Weather status icon"
+                                className="g__temp-status-img" />
+                            <p>Clear Sky</p>
 
-                        <div className="forecast__meta-container">
-                            <h3>61<sup className="g__details-metric">°F</sup></h3>
-                            <p className="g__details-label">Temperature</p>
+                            <div className="forecast__meta-container">
+                                <h3>61<sup className="g__details-metric">°F</sup></h3>
+                                <p className="g__details-label">Temperature</p>
+                            </div>
+
+                            <div className="forecast__meta-container">
+                                <h3>20<sup className="g__details-metric">%</sup></h3>
+                                <p className="g__details-label">Humidity</p>
+                            </div>
                         </div>
 
-                        <div className="forecast__meta-container">
-                            <h3>20<sup className="g__details-metric">%</sup></h3>
-                            <p className="g__details-label">Humidity</p>
-                        </div>
                     </div>
                 </div>
+                
 
 
 
