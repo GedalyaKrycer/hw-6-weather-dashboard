@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './components/SearchBar';
 import CurrentTemp from './components/CurrentTemp';
-import FiveDayForecast from './components/FiveDayForecast';
+import ThreeDayForecast from './components/ThreeDayForecast';
 import LocationHistory from './components/LocationHistory';
 import SidebarWrapper from './components/SidebarWrapper';
 
@@ -18,7 +18,7 @@ function App() {
         <section className="column g__results-container container">
           <SearchBar />
           <CurrentTemp />
-          <FiveDayForecast />
+          <ThreeDayForecast />
         </section>
       </main>
     </>

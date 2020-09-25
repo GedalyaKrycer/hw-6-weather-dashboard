@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-function FiveDayForecast() {
+function ThreeDayForecast() {
     return (
         <div>
             <h4>3 Day Forecast</h4>
@@ -91,4 +91,4 @@ function FiveDayForecast() {
     )
 }
 
-export default FiveDayForecast;
+export default ThreeDayForecast;

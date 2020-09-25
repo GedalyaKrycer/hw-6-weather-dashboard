@@ -47,6 +47,12 @@
 
 }
 
+.forecast__meta-container sup{
+    font-weight: 500;
+    opacity: .8;
+
+}
+
 
 
 
