@@ -1,9 +1,23 @@
 import React from 'react';
 import './style.css';
 
-function CurrentTemp() {
+function CurrentTemp({ unsplashResult }) {
+
+
+    const containerStyling = {
+  
+        borderRadius: "5px",
+        backgroundImage: `linear-gradient(0deg, rgba(98, 4, 126, 0.95), rgba(233, 146, 6, 0.95)), url(${unsplashResult})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "cover",
+        boxShadow: "0px 2px 4px rgb(0 0 0 / 0.25)"
+    }
+
+
     return (
-        <div className="current-temp__container">
+        <div
+            className="current-temp__container" 
+            style={containerStyling}>
             <div className="current-temp__header">
 
                 <h2>Las Vegas</h2>
@@ -11,7 +25,7 @@ function CurrentTemp() {
                     <p className="current-temp__meta-date">Sep / 23 / 2020</p>
                     <div className="current-temp__meta-status">
                         <img src="https://openweathermap.org/img/wn/01d.png" alt="Weather status icon"
-                        className="g__temp-status-img"/>
+                            className="g__temp-status-img" />
                         <p>Clear Sky</p>
                     </div>
                 </div>
