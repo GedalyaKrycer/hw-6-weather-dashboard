@@ -6,7 +6,7 @@
 
 .search-bar__btn {
   background: rgb(168,87,209);
-  background: linear-gradient(-90deg, #df8817, #a857d1, #9381ff, #169c59);
+  background: linear-gradient(-90deg, #df8817, #a857d1, #9381ff);
   background-size: 800% 800%;
 
     -webkit-animation: bgColorChange 50s ease infinite;
