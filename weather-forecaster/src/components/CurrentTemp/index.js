@@ -18,19 +18,19 @@ function CurrentTemp() {
             </div>
             <div className="columns current-temp__details-container">
                 <div className="column">
-                    <h3>97<sup className="g__details-metric">°F</sup></h3>
+                    <h3 className="g__details-num">97<sup className="g__details-metric">°F</sup></h3>
                     <p className="g__details-label">Temperature</p>
                 </div>
                 <div className="column">
-                    <h3>10<sup className="g__details-metric">%</sup></h3>
+                    <h3 className="g__details-num">10<sup className="g__details-metric">%</sup></h3>
                     <p className="g__details-label">Humidity</p>
                 </div>
                 <div className="column">
-                    <h3>8<sup className="g__details-metric">MPH</sup></h3>
+                    <h3 className="g__details-num">8<sup className="g__details-metric">MPH</sup></h3>
                     <p className="g__details-label">Wind Speed</p>
                 </div>
                 <div className="column">
-                    <h3>7.28</h3>
+                    <h3 className="g__details-num">7.28</h3>
                     <p className="g__details-label">UV Index</p>
                 </div>
 

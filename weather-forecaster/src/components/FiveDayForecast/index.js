@@ -19,12 +19,12 @@ function FiveDayForecast() {
                             <p>Clear Sky</p>
 
                             <div className="forecast__meta-container">
-                                <h3>61<sup className="g__details-metric">°F</sup></h3>
+                                <h3 className="g__details-num">61<sup className="g__details-metric">°F</sup></h3>
                                 <p className="g__details-label">Temperature</p>
                             </div>
 
                             <div className="forecast__meta-container">
-                                <h3>20<sup className="g__details-metric">%</sup></h3>
+                                <h3 className="g__details-num">20<sup className="g__details-metric">%</sup></h3>
                                 <p className="g__details-label">Humidity</p>
                             </div>
                         </div>
@@ -44,12 +44,12 @@ function FiveDayForecast() {
                             <p>Clear Sky</p>
 
                             <div className="forecast__meta-container">
-                                <h3>61<sup className="g__details-metric">°F</sup></h3>
+                                <h3 className="g__details-num">61<sup className="g__details-metric">°F</sup></h3>
                                 <p className="g__details-label">Temperature</p>
                             </div>
 
                             <div className="forecast__meta-container">
-                                <h3>20<sup className="g__details-metric">%</sup></h3>
+                                <h3 className="g__details-num">20<sup className="g__details-metric">%</sup></h3>
                                 <p className="g__details-label">Humidity</p>
                             </div>
                         </div>
@@ -69,12 +69,12 @@ function FiveDayForecast() {
                             <p>Clear Sky</p>
 
                             <div className="forecast__meta-container">
-                                <h3>61<sup className="g__details-metric">°F</sup></h3>
+                                <h3 className="g__details-num">61<sup className="g__details-metric">°F</sup></h3>
                                 <p className="g__details-label">Temperature</p>
                             </div>
 
                             <div className="forecast__meta-container">
-                                <h3>20<sup className="g__details-metric">%</sup></h3>
+                                <h3 className="g__details-num">20<sup className="g__details-metric">%</sup></h3>
                                 <p className="g__details-label">Humidity</p>
                             </div>
                         </div>

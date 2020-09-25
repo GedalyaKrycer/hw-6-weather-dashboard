@@ -8,6 +8,8 @@ Variables
   --primary-dark-color: #8b09af;
   --secondary-color: #df8e67;
   --secondary-light-color: rgba(223, 143, 103, 0.3);
+  --white-light-color: rgba(255, 255, 255, 0.6);
+  --white-lighter-color: rgba(255, 255, 255, 0.3);
 
 }
 
@@ -78,12 +80,6 @@ h2 {
   line-height: 1.1;
 }
 
-h3 {
-  font-size: 3.5rem;
-  font-weight: 200;
-  color: white;
-}
-
 h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.7rem;
@@ -99,6 +95,36 @@ h5 {
   color: white;
   font-weight: bold;
 }
+
+
+.g__temp-status-img {
+  width: 30px;
+  height: 100%;
+}
+
+.g__details-metric {
+  font-size: 1rem;
+  font-weight: 300;
+  position: relative;
+  top: -8px;
+  
+}
+
+.g__details-num {
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: white;
+}
+
+.g__details-label {
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
 
 
 
@@ -152,27 +178,22 @@ Bulma Overrides
   white-space: normal;
 }
 
-.g__temp-status-img {
-  width: 30px;
-  height: 100%;
+button {
+  background: none;
+  padding: 0;
+  text-align: left;
+  border: none;
+  font: bold 1rem 'Inter', sans-serif;
 }
 
-.g__details-metric {
-  font-size: 1rem;
-  font-weight: 300;
-  position: relative;
-  top: -8px;
-  
+button:focus {
+  outline-color: var(--secondary-color);
 }
 
-.g__details-label {
-  color: var(--secondary-color);
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+a:focus {
+  outline-color: var(--secondary-color);
 }
+
 
 
 
