@@ -23,6 +23,7 @@ function App() {
       .then((res) => {
         setUnsplashResult(res.data.results[0].urls.regular)
       })
+      .catch((err) => console.log(err));
 
   }
 
