@@ -1,7 +1,26 @@
 import React from 'react';
 import './style.css';
 
-function CurrentTemp({ unsplashResult }) {
+function CurrentTemp({
+    unsplashResult,
+    displayForecast,
+    oWName,
+    oWIcon,
+    oWIconDescription,
+    oWDateTime }) {
+
+    
+    // Converts the Open Weather time unix code into a readable date
+    function timeConverter(UNIX_timestamp) {
+        const a = new Date(UNIX_timestamp * 1000);
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const year = a.getFullYear();
+        const month = months[a.getMonth()];
+        const date = a.getDate();
+        const time = month + ' / ' + date + ' / ' + year;
+        return time;
+    };
+
 
     // This adds styling for a API generated background image
     const containerStyling = {
@@ -14,19 +33,20 @@ function CurrentTemp({ unsplashResult }) {
     }
 
 
+
     return (
         <div
-            className="current-temp__container" 
+            className="current-temp__container"
             style={containerStyling}>
             <div className="current-temp__header">
 
-                <h2>Las Vegas</h2>
+                <h2>{oWName}</h2>
                 <div className="current-temp__meta">
-                    <p className="current-temp__meta-date">Sep / 23 / 2020</p>
+    <p className="current-temp__meta-date">{timeConverter(oWDateTime)}</p>
                     <div className="current-temp__meta-status">
-                        <img src="https://openweathermap.org/img/wn/01d.png" alt="Weather status icon"
+                        <img src={`https://openweathermap.org/img/wn/${oWIcon}.png`} alt="Weather status icon"
                             className="g__temp-status-img" />
-                        <p>Clear Sky</p>
+                        <p>{oWIconDescription}</p>
                     </div>
                 </div>
             </div>
