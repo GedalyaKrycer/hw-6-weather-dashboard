@@ -34,6 +34,8 @@ function App() {
           <SidebarWrapper>
             <LocationHistory />
           </SidebarWrapper>
+          
+        {/* !!!!Add AN ERROR STATE HERE */}
 
         </section>
         <section className="column g__results-container container">

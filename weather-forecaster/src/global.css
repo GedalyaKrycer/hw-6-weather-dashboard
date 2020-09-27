@@ -188,11 +188,20 @@ button {
 }
 
 button:focus {
-  outline-color: var(--secondary-color);
+  outline: white none 0;
+  opacity: .6;
+
 }
 
+/* button:active {
+  outline: none;
+  border: none;
+
+} */
+
 a:focus {
-  outline-color: var(--secondary-color);
+  outline: white none 0;
+  opacity: .6;
 }
 
 

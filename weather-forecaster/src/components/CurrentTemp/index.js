@@ -3,9 +3,8 @@ import './style.css';
 
 function CurrentTemp({ unsplashResult }) {
 
-
+    // This adds styling for a API generated background image
     const containerStyling = {
-  
         borderRadius: "5px",
         backgroundImage: `linear-gradient(0deg, rgba(98, 4, 126, 0.95), rgba(233, 146, 6, 0.95)), url(${unsplashResult})`,
         backgroundRepeat: 'no-repeat',
