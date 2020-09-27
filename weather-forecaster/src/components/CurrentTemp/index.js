@@ -9,6 +9,7 @@ function CurrentTemp({ unsplashResult }) {
         backgroundImage: `linear-gradient(0deg, rgba(98, 4, 126, 0.95), rgba(233, 146, 6, 0.95)), url(${unsplashResult})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: "cover",
+        backgroundPosition: "bottom",
         boxShadow: "0px 2px 4px rgb(0 0 0 / 0.25)"
     }
 
