@@ -5,6 +5,7 @@ import FutureDayForecast from './components/FutureDayForecast';
 import LocationHistory from './components/LocationHistory';
 import SidebarWrapper from './components/SidebarWrapper';
 import SearchErrorMessage from './components/SearchErrorMessage';
+import PreContentMessage from './components/PreContentMessage';
 import axios from 'axios';
 
 function App() {
@@ -148,11 +149,10 @@ function App() {
             submitSearch={submitSearch}
           />
 
-          {/* Error State Message */}
-
           {!apiErr ? (null) : <SearchErrorMessage />}
 
-          {/* {preContent} */}
+          {!preContent ? (null) : <PreContentMessage />}
+
           <CurrentTemp
             unsplashResult={unsplashResult}
             displayCurrentForecast={displayCurrentForecast}

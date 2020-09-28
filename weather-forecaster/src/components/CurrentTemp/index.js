@@ -60,11 +60,6 @@ function CurrentTemp({
                     <h3 className="g__details-num">{openWeatherResults.humidity}<sup className="g__details-metric">%</sup></h3>
                     <p className="g__details-label">Humidity</p>
                 </div>
-                <div className="column">
-                    <h3 className="g__details-num">{openWeatherResults.windSpeed}<sup className="g__details-metric">MPH</sup></h3>
-                    <p className="g__details-label">Wind Speed</p>
-                </div>
-
 
             </div>
 

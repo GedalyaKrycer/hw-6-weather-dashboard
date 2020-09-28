@@ -1,0 +1,21 @@
+.pre-content__container {
+  text-align: center;
+    margin: 50px auto -30px;
+    padding: 50px 30px;
+    color: var(--secondary-color);
+    border-radius: 15px;
+    background: #9308ba;
+    box-shadow:  7px 7px 25px #7d079e, 
+    -7px -7px 25px #a909d6;
+  }
+  
+  .pre-content__title {
+    color: var(--secondary-color);
+  }
+  
+  .pre-content__msg {
+    max-width: 400px;
+    margin: 10px auto 0;
+    font-weight: 600;
+  
+  }
