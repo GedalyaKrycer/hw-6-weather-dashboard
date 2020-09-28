@@ -4,12 +4,9 @@ import './style.css';
 
 function CurrentTemp({
     unsplashResult,
-    displayForecast,
+    displayCurrentForecast,
     openWeatherResults
 }) {
-
-
-
 
 
     // This adds styling for a API generated background image
@@ -23,7 +20,7 @@ function CurrentTemp({
     }
 
     // If there is no data this does not display the current temp code.
-    if (displayForecast === false) {
+    if (displayCurrentForecast === false) {
         return null;
     }
 
@@ -53,11 +50,11 @@ function CurrentTemp({
                 </div>
                 <div className="column">
                     <h3 className="g__details-num">{openWeatherResults.maxTemperature}<sup className="g__details-metric">°F</sup></h3>
-                    <p className="g__details-label">High</p>
+                    <p className="g__details-label">High +</p>
                 </div>
                 <div className="column">
                     <h3 className="g__details-num">{openWeatherResults.minTemperature}<sup className="g__details-metric">°F</sup></h3>
-                    <p className="g__details-label">Low</p>
+                    <p className="g__details-label">Low –</p>
                 </div>
                 <div className="column">
                     <h3 className="g__details-num">{openWeatherResults.humidity}<sup className="g__details-metric">%</sup></h3>

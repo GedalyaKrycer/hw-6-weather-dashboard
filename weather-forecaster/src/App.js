@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import CurrentTemp from './components/CurrentTemp';
-import ThreeDayForecast from './components/ThreeDayForecast';
+import FutureDayForecast from './components/FutureDayForecast';
 import LocationHistory from './components/LocationHistory';
 import SidebarWrapper from './components/SidebarWrapper';
+import SearchErrorMessage from './components/SearchErrorMessage';
 import axios from 'axios';
 
 function App() {
@@ -17,11 +18,21 @@ function App() {
   // Stores object of data from Unsplash
   const [openWeatherResults, setOpenWeatherResults] = useState({});
 
+  // Stores boolean if the current forecast should display
+  const [displayCurrentForecast, setDisplayCurrentForecast] = useState(false);
 
-  const [displayForecast, setDisplayForecast] = useState(false);
+  // Stores boolean if the future forecast should display
+  const [displayFutureForecast, setDisplayFutureForecast] = useState(false);
+
+  // Stores boolean if the pre content message should display
+  const [preContent, setPreContent] = useState(true);
+
+
+
+  // Stores boolean for if there is an API error. If so it triggers a front end alert
   const [apiErr, setApiErr] = useState(false);
 
- 
+
 
   // Converts the Open Weather time unix code into a readable date
   function timeConverter(UNIX_timestamp) {
@@ -59,7 +70,7 @@ function App() {
       .then((res) => {
         // Gets Weather Data
         setOpenWeatherResults({
-          name: res.data.name, 
+          name: res.data.name,
           icon: res.data.weather[0].icon,
           description: res.data.weather[0].description,
           date: timeConverter(res.data.dt),
@@ -72,15 +83,36 @@ function App() {
           longitude: res.data.coord.lon,
 
         })
-      
+
         setApiErr(false);
-        setDisplayForecast(true);
+        setDisplayCurrentForecast(true);
+        setPreContent(false);
 
       })
       .catch((err) => {
         setApiErr(true);
         console.log(`Open Weather Error: ${err}`);
       });
+
+
+    // 5 Day Forcast Weather API 
+    const openWeatherForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue.current.value}&appid=${process.env.REACT_APP_OW_KEY}&units=imperial`;
+
+    axios.get(openWeatherForecastUrl)
+      .then((res) => {
+        console.log(res.data)
+
+        setApiErr(false);
+        setDisplayFutureForecast(true);
+
+      })
+      .catch((err) => {
+        setApiErr(true);
+        console.log(`Open Weather Error: ${err}`);
+      });
+
+
+
 
     // if (oWHLongitude && oWHLatitude) {
     //   // UV Index Open Weather API 
@@ -109,8 +141,6 @@ function App() {
             <LocationHistory />
           </SidebarWrapper>
 
-
-
         </section>
         <section className="column g__results-container container">
           <SearchBar
@@ -119,17 +149,18 @@ function App() {
           />
 
           {/* Error State Message */}
-          {!apiErr ? (null) :
-            (<div className="g__error-container">
-              <h1 className="g__error-title">Uh oh <span role="img" aria-label="Thinking">🤔</span></h1>
-              <p className="g__error-msg">Please make sure your city or country is spelled correctly and then try your search again.</p>
-            </div>)}
+
+          {!apiErr ? (null) : <SearchErrorMessage />}
+
+          {/* {preContent} */}
           <CurrentTemp
             unsplashResult={unsplashResult}
-            displayForecast={displayForecast}
+            displayCurrentForecast={displayCurrentForecast}
             openWeatherResults={openWeatherResults}
           />
-          <ThreeDayForecast />
+          <FutureDayForecast
+            displayFutureForecast={displayFutureForecast}
+          />
         </section>
       </main>
     </>

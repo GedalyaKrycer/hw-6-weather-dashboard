@@ -126,28 +126,7 @@ h5 {
   color: var(--secondary-color);
 }
 
-.g__error-container {
-  width: 100%;
-  text-align: center;
-  margin-top: 50px;
-  padding: 50px 30px;
-  color: var(--secondary-color);
-  border-radius: 15px;
-  background: #9308ba;
-  box-shadow: inset 9px 9px 18px #7d079e, 
-              inset -9px -9px 18px #a909d6;
-}
 
-.g__error-title {
-  color: var(--secondary-color);
-}
-
-.g__error-msg {
-  max-width: 400px;
-  margin: 10px auto 0;
-  font-weight: 600;
-
-}
 
 
 
