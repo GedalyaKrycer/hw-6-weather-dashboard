@@ -49,7 +49,7 @@ function CurrentTemp({
             <div className="columns current-temp__details-container">
                 <div className="column">
                     <h3 className="g__details-num">{openWeatherResults.temperature}<sup className="g__details-metric">°F</sup></h3>
-                    <p className="g__details-label">Temperature</p>
+                    <p className="g__details-label">Current</p>
                 </div>
                 <div className="column">
                     <h3 className="g__details-num">{openWeatherResults.maxTemperature}<sup className="g__details-metric">°F</sup></h3>
