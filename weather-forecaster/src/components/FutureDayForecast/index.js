@@ -2,7 +2,12 @@ import React from 'react';
 import './style.css';
 
 function FutureDayForecast({
-    displayFutureForecast
+    displayFutureForecast,
+    icon,
+    description,
+    date,
+    temperature,
+    humidity
 }) {
 
     // If there is no data this does not display the current temp code.
@@ -17,22 +22,22 @@ function FutureDayForecast({
                 <div className="column">
                     <div className="forecast__container">
                         <div className="forecast__header">
-                            <h5>Sep / 25 / 2020</h5>
+                            <h5>{date}</h5>
                         </div>
                         <div className="forecast__body">
                             <img
-                                src="https://openweathermap.org/img/wn/01d.png"
+                                src={icon}
                                 alt="Weather status icon"
                                 className="g__temp-status-img" />
-                            <p>Clear Sky</p>
+                            <p>{description}</p>
 
                             <div className="forecast__meta-container">
-                                <h3 className="g__details-num">61<sup className="g__details-metric">°F</sup></h3>
+                                <h3 className="g__details-num">{temperature}<sup className="g__details-metric">°F</sup></h3>
                                 <p className="g__details-label">Temperature</p>
                             </div>
 
                             <div className="forecast__meta-container">
-                                <h3 className="g__details-num">20<sup className="g__details-metric">%</sup></h3>
+                                <h3 className="g__details-num">{humidity}<sup className="g__details-metric">%</sup></h3>
                                 <p className="g__details-label">Humidity</p>
                             </div>
                         </div>

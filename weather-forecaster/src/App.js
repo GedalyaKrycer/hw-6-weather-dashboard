@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import SearchBar from './components/SearchBar';
 import CurrentTemp from './components/CurrentTemp';
 import FutureDayForecast from './components/FutureDayForecast';
@@ -16,8 +16,11 @@ function App() {
   // Stores url from Unsplash
   const [unsplashResult, setUnsplashResult] = useState();
 
-  // Stores object of data from Unsplash
+  // Stores an object of data from Open Weather
   const [openWeatherResults, setOpenWeatherResults] = useState({});
+
+  // Stores an Array of data from Open Weather
+  const [openWeatherForecastResults, setOpenWeatherForecastResults] = useState([]);
 
   // Stores boolean if the current forecast should display
   const [displayCurrentForecast, setDisplayCurrentForecast] = useState(false);
@@ -34,7 +37,6 @@ function App() {
   const [apiErr, setApiErr] = useState(false);
 
 
-
   // Converts the Open Weather time unix code into a readable date
   function timeConverter(UNIX_timestamp) {
     const a = new Date(UNIX_timestamp * 1000);
@@ -45,7 +47,6 @@ function App() {
     const time = month + ' / ' + date + ' / ' + year;
     return time;
   };
-
 
 
   const submitSearch = async (event) => {
@@ -101,7 +102,22 @@ function App() {
 
     axios.get(openWeatherForecastUrl)
       .then((res) => {
-        console.log(res.data)
+
+        for (let futureForecastArray = 2; futureForecastArray < 35; futureForecastArray += 8) {
+          console.log(res.data.list[futureForecastArray])
+
+          setOpenWeatherForecastResults(...openWeatherForecastResults, {
+            icon: res.data.list[futureForecastArray].weather[0].icon,
+            description: res.data.list[futureForecastArray].weather[0].description,
+            date: timeConverter(res.data.list[futureForecastArray].dt),
+            temperature: Math.floor(res.data.list[futureForecastArray].main.temp),
+            humidity: Math.floor(res.data.list[futureForecastArray].main.humidity)
+          })
+
+          // setOpenWeatherForecastResults([futureForecastArray])
+
+
+        }
 
         setApiErr(false);
         setDisplayFutureForecast(true);
@@ -113,26 +129,12 @@ function App() {
       });
 
 
-
-
-    // if (oWHLongitude && oWHLatitude) {
-    //   // UV Index Open Weather API 
-    //   const openWeatherUVIndexUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${oWHLatitude}&lon=${oWHLongitude}&appid=${process.env.REACT_APP_OW_KEY}`;
-
-    //   axios.get(openWeatherUVIndexUrl)
-    //     .then((res) => {
-    //       setOWUVIndex(res.data.uv.value);
-
-    //       setApiErr(false);
-    //     })
-    //     .catch((err) => {
-    //       setApiErr(true);
-    //       console.log(`Open Weather UV Error: ${err}`);
-    //     });
-    // }
-
-
   }
+
+  const testArray = [];
+
+  console.log("openWeatherForecastResults")
+  console.log(openWeatherForecastResults)
 
   return (
     <>
@@ -158,9 +160,20 @@ function App() {
             displayCurrentForecast={displayCurrentForecast}
             openWeatherResults={openWeatherResults}
           />
-          <FutureDayForecast
-            displayFutureForecast={displayFutureForecast}
-          />
+
+          {/* This generates 5 forecast cards */}
+          {/* {openWeatherForecastResults.map((e) => 
+            <FutureDayForecast
+              displayFutureForecast={displayFutureForecast}
+              key={e.dt}
+              icon={e.icon}
+              description={e.description}
+              date={e.dt}
+              temperature={e.temperature}
+              humidity={e.humidity}
+            />
+          )} */}
+
         </section>
       </main>
     </>
