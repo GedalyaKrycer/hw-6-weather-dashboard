@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;600;700;900&family=Montserrat:wght@100;400;900&display=swap');
+
+/* ——————————————————————————————————————————————————————————————
+Variables 
+—————————————————————————————————————————————————————————————— */
+:root {
+  --primary-color: #9308ba;
+  --primary-dark-color: #8b09af;
+  --secondary-color: #df8e67;
+  --secondary-light-color: rgba(223, 143, 103, 0.3);
+  --white-light-color: rgba(255, 255, 255, 0.6);
+  --white-lighter-color: rgba(255, 255, 255, 0.3);
+
+}
+
+/* ——————————————————————————————————————————————————————————————
+Base 
+—————————————————————————————————————————————————————————————— */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: calc(100vh + 12px);
+  background: var(--primary-color);
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.g__full-percent-height {
+  height: 100%;
+}
+
+.g__main-wrapper {
+  padding: 100px;
+}
+
+.g__sidebar-container {
+    max-width: 250px;
+}
+
+.g__results-container {
+  padding: 50px 50px 80px;
+  border-radius: 15px;
+  background:var(--primary-color);
+  -webkit-box-shadow:  16px 16px 32px #760695, 
+             -16px -16px 32px #b00adf;
+  -moz-box-shadow:  16px 16px 32px #760695, 
+             -16px -16px 32px #b00adf;
+  box-shadow:  16px 16px 32px #760695, 
+             -16px -16px 32px #b00adf;
+
+}
+
+
+/* ——————————————————————————————————————————————————————————————
+Typography 
+—————————————————————————————————————————————————————————————— */
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  text-align: center;
+  color: var(--secondary-color);
+  font-weight: normal;
+  margin-top: 4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+
+.g__temp-status-img {
+  width: 30px;
+  height: 100%;
+}
+
+.g__details-metric {
+  font-size: 1rem;
+  font-weight: 300;
+  position: relative;
+  top: -8px;
+  opacity: .5;
+  
+}
+
+.g__details-num {
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: white;
+}
+
+.g__details-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+
+
+
+
+
+
+
+/* ——————————————————————————————————————————————————————————————
+Bulma Overrides  
+—————————————————————————————————————————————————————————————— */
+
+.input,
+.button {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    transition: .5s;
+}
+
+.input {
+    padding-left: 20px; 
+    background: #c379d8;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-right: white solid 3px;
+    transition: .5s;
+}
+
+.input:hover {
+    border-right: white solid 3px;
+    transition: .5s;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.657) !important; 
+  font-weight: normal;
+  
+}
+
+.input:focus {
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.35);
+  border-color: white;
+  font-size: 22px;
+  transition: .5s;
+}
+
+.button {
+  border: none;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  min-width: 120px;
+  white-space: normal;
+}
+
+button {
+  background: none;
+  padding: 0;
+  text-align: left;
+  border: none;
+  font: bold 1rem 'Inter', sans-serif;
+}
+
+button:focus {
+  outline: white none 0;
+  opacity: .6;
+
+}
+
+
+a:focus {
+  outline: white none 0;
+  opacity: .6;
+}
+
+
+
+
+
+/* ===========================================================
+Mobile Styles  
+=========================================================== */
+@media screen and (max-width: 1110px) {
+  .g__main-wrapper  {
+    flex-direction: column;
+  }
+  .g__sidebar-container {
+    max-width: 100%;
+  }
+  .g__main-wrapper {
+    padding: 30px;
+  }
+
+} 
+
+
+@media screen and (max-width: 768px) {
+    
+  .button {
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    min-width: 70px;
+    white-space: normal;
+  }
+  
+  .input:focus {
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (max-width: 475px) {
+  .g__results-container {
+    padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow:  none;
+  box-shadow:  none;
+
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+}

@@ -1,19 +1,19 @@
 // Open Weather API Resources 
-var owKey = "6b0f83d2f817a4a623181896ec6d38d0";
+const owKey = "6b0f83d2f817a4a623181896ec6d38d0";
 
 
 // Unix Time Converter Modified From Stack Overflow
 function timeConverter(UNIX_timestamp) {
-    var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var time = month + ' / ' + date + ' / ' + year;
+    const a = new Date(UNIX_timestamp * 1000);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const year = a.getFullYear();
+    const month = months[a.getMonth()];
+    const date = a.getDate();
+    const time = month + ' / ' + date + ' / ' + year;
     return time;
 };
  
-var savedLocations = [];
+const savedLocations = [];
 
 // ————————————————————————————————————————————————————————————————————
 // Current Weather
@@ -40,7 +40,7 @@ $("#citySearch").keypress(function(e) {
 function weatherSearch() {
 
     // Captures user's entry into the city variable
-    var city = $("#citySearch").val().trim();
+    const city = $("#citySearch").val().trim();
 
     // Save values to an array
     savedLocations.push(city);
@@ -67,7 +67,7 @@ function weatherSearch() {
     
 
     // API URL Build for the main weather display
-    var curWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
+    const curWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + owKey + "&units=imperial";
 
     // Ajax Request for the current day weather
     $.ajax({
@@ -79,13 +79,13 @@ function weatherSearch() {
         $("#cityName").text(response.name);
 
         // Variable For Current Weather icon
-        var curWeatherIcon = response.weather[0].icon;
+        const curWeatherIcon = response.weather[0].icon;
 
         // Adds the icon image to the html
         $("#cityWeatherIcon").attr("src", "https://openweathermap.org/img/wn/" + curWeatherIcon + ".png")
 
         // Variable For Current Weather Description
-        var iconDes = response.weather[0].description;
+        const iconDes = response.weather[0].description;
 
         // Adds icon description to the html
         $("#iconDes").text(iconDes);
@@ -94,29 +94,29 @@ function weatherSearch() {
         $("#cityDate").text(timeConverter(response.dt));
 
         // Variable For Current Weather Temperature
-        var tempValue = Math.floor(response.main.temp);
+        const tempValue = Math.floor(response.main.temp);
 
         // Adds Current Weather Temperature to the html
         $("#tempValue").text(`${tempValue}°F`);
 
         // Variable For Current Weather Humidity
-        var humidValue = Math.floor(response.main.humidity);
+        const humidValue = Math.floor(response.main.humidity);
 
         // Adds Current Weather Humidity to the html
         $("#humidValue").text(`${humidValue}%`);
 
         // Variable For Current Weather Window Speed
-        var windSpValue = Math.floor(response.wind.speed);
+        const windSpValue = Math.floor(response.wind.speed);
 
         // Adds Current Weather humidity to the html
         $("#windSpValue").text(`${windSpValue} MPH`);
 
         // City Location From API Call
-        var latVal = response.coord.lat;
-        var lonVal = response.coord.lon;
+        const latVal = response.coord.lat;
+        const lonVal = response.coord.lon;
 
         // Url for UV i Ajax Call
-        var uviQueryUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
+        const uviQueryUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latVal + "&lon=" + lonVal + "&appid=" + owKey;
 
         // Nested UV i Ajax Call
         $.ajax({
@@ -148,7 +148,7 @@ function weatherSearch() {
 
 
     // Query URL for 5 Day Forecast
-    var forecastQueryUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + owKey + "&units=imperial";
+    const forecastQueryUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + owKey + "&units=imperial";
 
     $.ajax({
         url: forecastQueryUrl,
@@ -156,20 +156,20 @@ function weatherSearch() {
     }).then(function(forecast) {
         
         // This stores the array of 40 weather markers
-        var fList = forecast.list;
+        const fList = forecast.list;
 
         // This custom array selects one from each day
-        var forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36]];
+        const forecastArr = [fList[5], fList[13], fList[21], fList[29], fList[36]];
 
         // For Loop stores the API Data and builds it on the HTML Page
         for (let i = 0; i < forecastArr.length; i++) {
 
             // Variables that store the API Data
-            var foreDate = forecast.list[i].dt;
-            var foreIcon = forecast.list[i].weather[0].icon;
-            var foreDesc = forecast.list[i].weather[0].description;
-            var foreTemp = forecast.list[i].main.temp;
-            var foreHumidity = forecast.list[i].main.humidity;
+            const foreDate = forecast.list[i].dt;
+            const foreIcon = forecast.list[i].weather[0].icon;
+            const foreDesc = forecast.list[i].weather[0].description;
+            const foreTemp = forecast.list[i].main.temp;
+            const foreHumidity = forecast.list[i].main.humidity;
 
             // HTML Build for each day
             $("#foreContent").append(`

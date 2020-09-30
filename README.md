@@ -1,7 +1,7 @@
 # hw-6-weather-dashboard
 Weather dashboard for major cities
 
-### [View Deployed Site](https://gedalyakrycer.github.io/hw-6-weather-dashboard/)
+### [View Deployed Site](https://gedalyakrycer.github.io/weather-forecaster/)
 
 
 ## Goal 

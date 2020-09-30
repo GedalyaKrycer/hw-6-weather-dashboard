@@ -1,0 +1,38 @@
+.side-bar__logo {
+    max-width: 50px;
+}
+
+.side-bar__logo span {
+    display: block;
+    width: 100%;
+}
+
+.sidebar__logo--one {
+    opacity: .35;
+}
+
+.sidebar__logo--two {
+    opacity: .5;
+}
+
+.sidebar__logo--three {
+    opacity: .65;
+}
+
+.sidebar__logo--four {
+    opacity: .85;
+}
+
+
+@media screen and (max-width: 1110px) {
+    
+    .side-bar__logo {
+       margin: 10px 0 40px;
+       max-width: 100%;
+       text-align: center;
+       font-size:1.5rem;
+    }
+
+   
+    
+}

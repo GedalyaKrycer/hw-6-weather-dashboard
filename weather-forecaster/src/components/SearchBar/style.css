@@ -1,0 +1,94 @@
+.search-bar__btn {
+  background: rgb(168,87,209);
+  background: linear-gradient(-90deg, #df8817, #a857d1, #9381ff);
+  background-size: 800% 800%;
+
+    -webkit-animation: bgColorChange 20s ease infinite;
+    -moz-animation: bgColorChange 20s ease infinite;
+    -o-animation: bgColorChange 20s ease infinite;
+    animation: bgColorChange 20s ease infinite;
+}
+
+@-webkit-keyframes bgColorChange {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes bgColorChange {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-o-keyframes bgColorChange {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes bgColorChange {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  
+
+.search-bar__btn:hover {
+    opacity: .70;
+    color: white;
+    transition: .5s;
+    
+}
+
+.search-bar__btn:focus {
+    color: white;
+    transition: .5s;
+}
+
+.search-bar__github-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-bar__github {
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    height: 40px;
+    font-size: 14px;
+    max-width: 130px;
+    border-radius: 4px;
+    padding: 10px;
+    transition: ease .3s;
+}
+
+.search-bar__github svg {
+    margin-right: 8px;
+}
+
+.search-bar__github:hover {
+    color: rgba(255, 255, 255, 0.7);
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: ease .3s;
+}
+
+@media screen and (max-width: 768px) {
+
+    .search-bar__github-container {
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .search-bar__github {
+        color: rgba(255, 255, 255, 0.7);
+        border: none;
+        height: 40px;
+        font-size: 14px;
+        max-width: 130px;
+
+    }
+
+    
+      
+}
