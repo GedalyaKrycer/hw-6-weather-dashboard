@@ -45,11 +45,18 @@ background: rgba(255, 255, 255, 0.05);
 }
 
 .current-temp__details-container .column:first-of-type {
-background: rgba(255, 255, 255, 0.08);
+background: rgba(255, 255, 255, 0.05);
 }
 
 .current-temp__details-container div:last-child {
 border-right: var(--secondary-light-color) solid 1px;
+}
+
+.current-temp__blur {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: hue-rotate(2deg);
+    -webkit-backdrop-filter: hue-rotate(2deg);
 }
 
 

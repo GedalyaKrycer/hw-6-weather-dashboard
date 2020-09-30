@@ -12,7 +12,7 @@ function CurrentTemp({
     // This adds styling for a API generated background image
     const containerStyling = {
         borderRadius: "5px",
-        backgroundImage: `linear-gradient(0deg, rgba(98, 4, 126, 0.95), rgba(233, 146, 6, 0.95)), url(${unsplashResult})`,
+        backgroundImage: `linear-gradient(0deg, rgba(98, 4, 126, 0.9), rgba(233, 146, 6, 0.9)), url(${unsplashResult})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: "cover",
         backgroundPosition: "bottom",
@@ -44,19 +44,19 @@ function CurrentTemp({
                 </div>
             </div>
             <div className="columns current-temp__details-container">
-                <div className="column">
+                <div className="column current-temp__blur">
                     <h3 className="g__details-num">{openWeatherResults.temperature}<sup className="g__details-metric">°F</sup></h3>
                     <p className="g__details-label">Current</p>
                 </div>
-                <div className="column">
+                <div className="column current-temp__blur">
                     <h3 className="g__details-num">{openWeatherResults.maxTemperature}<sup className="g__details-metric">°F</sup></h3>
                     <p className="g__details-label">High +</p>
                 </div>
-                <div className="column">
+                <div className="column current-temp__blur">
                     <h3 className="g__details-num">{openWeatherResults.minTemperature}<sup className="g__details-metric">°F</sup></h3>
                     <p className="g__details-label">Low –</p>
                 </div>
-                <div className="column">
+                <div className="column current-temp__blur">
                     <h3 className="g__details-num">{openWeatherResults.humidity}<sup className="g__details-metric">%</sup></h3>
                     <p className="g__details-label">Humidity</p>
                 </div>
