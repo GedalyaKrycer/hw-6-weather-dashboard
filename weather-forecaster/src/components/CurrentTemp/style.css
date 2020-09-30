@@ -53,10 +53,8 @@ border-right: var(--secondary-light-color) solid 1px;
 }
 
 .current-temp__blur {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: hue-rotate(2deg);
-    -webkit-backdrop-filter: hue-rotate(2deg);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 
