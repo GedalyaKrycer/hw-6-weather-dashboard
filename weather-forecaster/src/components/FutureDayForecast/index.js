@@ -2,18 +2,12 @@ import React from 'react';
 import './style.css';
 
 function FutureDayForecast({
-    displayFutureForecast,
     icon,
     description,
     date,
     temperature,
     humidity
 }) {
-
-    // If there is no data this does not display the current temp code.
-    if (displayFutureForecast === false) {
-        return null;
-    }
 
     return (
             

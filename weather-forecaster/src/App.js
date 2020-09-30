@@ -20,13 +20,16 @@ function App() {
   const [openWeatherResults, setOpenWeatherResults] = useState({});
 
   // Stores an Array of data from Open Weather
-  const [openWeatherForecastResults, setOpenWeatherForecastResults] = useState([]);
+  const [futureForecast, setFutureForecast] = useState();
 
   // Stores boolean if the current forecast should display
   const [displayCurrentForecast, setDisplayCurrentForecast] = useState(false);
 
   // Stores boolean if the future forecast should display
   const [displayFutureForecast, setDisplayFutureForecast] = useState(false);
+
+
+ 
 
   // Stores boolean if the pre content message should display
   const [preContent, setPreContent] = useState(true);
@@ -47,19 +50,41 @@ function App() {
     return time;
   };
 
-  const testArray = []
+  const forecastResultsArray = []
+  const forecastCardRender = []
 
   function processForecast(event) {
-    console.log(event);
-    for (event = 2; event < 35; event += 8) {
-      // setOpenWeatherForecastResults(event)
-      testArray.push(event);
+    for (let i = 2; i < 35; i += 8) {
+      // setOpenWeatherForecastResults(event[i])
+      forecastResultsArray.push(event[i]);
     }
-    console.log(testArray)
+
+    console.log(forecastResultsArray)
+
+    forecastResultsArray.forEach((e) => {
+      forecastCardRender.push(
+        <FutureDayForecast
+          displayFutureForecast={displayFutureForecast}
+          key={e.dt}
+          icon={e.weather[0].icon}
+          description={e.weather[0].description}
+          date={timeConverter(e.dt)}
+          temperature={Math.floor(e.main.temp)}
+          humidity={Math.floor(e.main.humidity)}
+        />
+      
+      );
+    });
+
+    setFutureForecast(forecastCardRender)
+
+    setDisplayFutureForecast(true);
+
+
   }
 
 
-  const submitSearch = async (event) => {
+  const submitSearch = (event) => {
     event.preventDefault();
 
     // Unsplash Image API
@@ -115,20 +140,7 @@ function App() {
         let futureForecastArray = res.data.list;
         processForecast(futureForecastArray)
 
-        // for (openWeatherForecastResults = 2; openWeatherForecastResults < 35; openWeatherForecastResults += 8) {
-
-        //   setOpenWeatherForecastResults({
-        //     icon: [openWeatherForecastResults].weather[0].icon,
-        //     description: [openWeatherForecastResults].weather[0].description,
-        //     date: timeConverter([openWeatherForecastResults].dt),
-        //     temperature: Math.floor([openWeatherForecastResults].main.temp),
-        //     humidity: Math.floor([openWeatherForecastResults].main.humidity)
-        //   })
-
-        // }
-
         setApiErr(false);
-        setDisplayFutureForecast(true);
 
       })
       .catch((err) => {
@@ -140,12 +152,13 @@ function App() {
   }
 
 
+
   return (
     <>
       <main className="columns is-desktop g__main-wrapper">
         <section className="column g__sidebar-container">
           <SidebarWrapper>
-            <LocationHistory />
+            {/* <LocationHistory /> */}
           </SidebarWrapper>
 
         </section>
@@ -167,20 +180,10 @@ function App() {
           {displayFutureForecast ? <h4>5 Day Forecast</h4> : null}
           <div className="columns forecast__main">
             {/* This generates 5 forecast cards */}
-            {/* {openWeatherForecastResults.map((e) => (
-              <FutureDayForecast
-                displayFutureForecast={displayFutureForecast}
-                key={e.dt}
-                icon={e.weather[0].icon}
-                description={e.weather[0].description}
-                date={timeConverter(e.dt)}
-                temperature={Math.floor(e.main.temp)}
-                humidity={Math.floor(e.main.humidity)}
-              />
-            )
-            )} */}
+            {futureForecast}
           </div>
 
+       
         </section>
       </main>
     </>
