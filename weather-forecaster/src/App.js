@@ -20,7 +20,7 @@ function App() {
   const [openWeatherResults, setOpenWeatherResults] = useState({});
 
   // Stores an Array of data from Open Weather
-  const [openWeatherForecastResults, setOpenWeatherForecastResults] = useState([]);
+  let [openWeatherForecastResults, setOpenWeatherForecastResults] = useState([]);
 
   // Stores boolean if the current forecast should display
   const [displayCurrentForecast, setDisplayCurrentForecast] = useState(false);
@@ -31,7 +31,7 @@ function App() {
   // Stores boolean if the pre content message should display
   const [preContent, setPreContent] = useState(true);
 
-
+  const testArray = [];
 
   // Stores boolean for if there is an API error. If so it triggers a front end alert
   const [apiErr, setApiErr] = useState(false);
@@ -103,21 +103,26 @@ function App() {
     axios.get(openWeatherForecastUrl)
       .then((res) => {
 
-        for (let futureForecastArray = 2; futureForecastArray < 35; futureForecastArray += 8) {
-          console.log(res.data.list[futureForecastArray])
 
-          setOpenWeatherForecastResults(...openWeatherForecastResults, {
-            icon: res.data.list[futureForecastArray].weather[0].icon,
-            description: res.data.list[futureForecastArray].weather[0].description,
-            date: timeConverter(res.data.list[futureForecastArray].dt),
-            temperature: Math.floor(res.data.list[futureForecastArray].main.temp),
-            humidity: Math.floor(res.data.list[futureForecastArray].main.humidity)
-          })
+        let futureForecastArray = res.data.list;
 
-          // setOpenWeatherForecastResults([futureForecastArray])
+        console.log(futureForecastArray);
+        console.log(futureForecastArray[0].weather[0].icon);
 
 
-        }
+        setOpenWeatherForecastResults(futureForecastArray);
+
+        // for (openWeatherForecastResults = 2; openWeatherForecastResults < 35; openWeatherForecastResults += 8) {
+
+        //   setOpenWeatherForecastResults({
+        //     icon: [openWeatherForecastResults].weather[0].icon,
+        //     description: [openWeatherForecastResults].weather[0].description,
+        //     date: timeConverter([openWeatherForecastResults].dt),
+        //     temperature: Math.floor([openWeatherForecastResults].main.temp),
+        //     humidity: Math.floor([openWeatherForecastResults].main.humidity)
+        //   })
+
+        // }
 
         setApiErr(false);
         setDisplayFutureForecast(true);
@@ -131,10 +136,6 @@ function App() {
 
   }
 
-  const testArray = [];
-
-  console.log("openWeatherForecastResults")
-  console.log(openWeatherForecastResults)
 
   return (
     <>
@@ -160,19 +161,22 @@ function App() {
             displayCurrentForecast={displayCurrentForecast}
             openWeatherResults={openWeatherResults}
           />
-
-          {/* This generates 5 forecast cards */}
-          {/* {openWeatherForecastResults.map((e) => 
-            <FutureDayForecast
-              displayFutureForecast={displayFutureForecast}
-              key={e.dt}
-              icon={e.icon}
-              description={e.description}
-              date={e.dt}
-              temperature={e.temperature}
-              humidity={e.humidity}
-            />
-          )} */}
+          {displayFutureForecast ? <h4>5 Day Forecast</h4> : null}
+          <div className="columns forecast__main">
+            {/* This generates 5 forecast cards */}
+            {openWeatherForecastResults.map((e) => (
+              <FutureDayForecast
+                displayFutureForecast={displayFutureForecast}
+                key={e.dt}
+                icon={e.weather[0].icon}
+                description={e.weather[0].description}
+                date={timeConverter(e.dt)}
+                temperature={Math.floor(e.main.temp)}
+                humidity={Math.floor(e.main.humidity)}
+              />
+            )
+            )}
+          </div>
 
         </section>
       </main>

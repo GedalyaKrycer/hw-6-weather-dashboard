@@ -9,7 +9,8 @@
     background: #9308ba;
     box-shadow:  7px 7px 25px #7d079e, 
     -7px -7px 25px #a909d6;
-    min-width: 280px;
+    min-width: 220px;
+    max-width: 400px;
     margin: 0 auto;
     color: var(--secondary-color);
 }

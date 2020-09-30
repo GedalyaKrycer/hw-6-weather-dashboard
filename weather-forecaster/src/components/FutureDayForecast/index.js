@@ -16,9 +16,7 @@ function FutureDayForecast({
     }
 
     return (
-        <div>
-            <h4>3 Day Forecast</h4>
-            <div className="columns forecast__main">
+            
                 <div className="column">
                     <div className="forecast__container">
                         <div className="forecast__header">
@@ -26,7 +24,7 @@ function FutureDayForecast({
                         </div>
                         <div className="forecast__body">
                             <img
-                                src={icon}
+                                src={`https://openweathermap.org/img/wn/${icon}.png`}
                                 alt="Weather status icon"
                                 className="g__temp-status-img" />
                             <p>{description}</p>
@@ -47,8 +45,7 @@ function FutureDayForecast({
 
 
 
-            </div>
-        </div>
+
     )
 }
 
