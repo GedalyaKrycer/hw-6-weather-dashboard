@@ -24,12 +24,11 @@ I took the project a step further by re-imaging the layout and design, but still
 
 * Built in React.js, uses Axios for API calls and Bulma for the css framework
 
-* Weather data is being pulled from the Open Weather API, using 3 different endpoints
-    * UV Index
+* Weather data is being pulled from the Open Weather API, using 2 different endpoints
     * Current Weather 
-    * 3 Hour / 5 Hour Forecast 
+    * 3 Hour / 5 Day Forecast 
 
-* Current Weather pulls a random background image from the Unsplash API, based on search input.
+* Current weather pulls a random background image from the Unsplash API, based on search input.
 
 
 ## Future Additions
