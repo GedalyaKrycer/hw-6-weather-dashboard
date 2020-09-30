@@ -1,7 +1,7 @@
 # hw-6-weather-dashboard
 Weather dashboard for major cities
 
-### [View Deployed Site](https://cranky-brattain-60efb5.netlify.app/)
+### [View Deployed Site](https://weatherforecastreact.netlify.app)
 
 
 ## Goal 
