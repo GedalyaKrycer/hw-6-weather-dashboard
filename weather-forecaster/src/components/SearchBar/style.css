@@ -1,18 +1,12 @@
-/* .search-bar__header {
-    padding-bottom: 50px;
-    border-bottom: solid 1px rgba(240, 239, 239, 0.219);
-} */
-
-
 .search-bar__btn {
   background: rgb(168,87,209);
   background: linear-gradient(-90deg, #df8817, #a857d1, #9381ff);
   background-size: 800% 800%;
 
-    -webkit-animation: bgColorChange 50s ease infinite;
-    -moz-animation: bgColorChange 50s ease infinite;
-    -o-animation: bgColorChange 50s ease infinite;
-    animation: bgColorChange 50s ease infinite;
+    -webkit-animation: bgColorChange 20s ease infinite;
+    -moz-animation: bgColorChange 20s ease infinite;
+    -o-animation: bgColorChange 20s ease infinite;
+    animation: bgColorChange 20s ease infinite;
 }
 
 @-webkit-keyframes bgColorChange {
@@ -37,7 +31,7 @@
   }
   
 
-  .search-bar__btn:hover {
+.search-bar__btn:hover {
     opacity: .70;
     color: white;
     transition: .5s;
