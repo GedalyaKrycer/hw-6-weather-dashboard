@@ -20,7 +20,7 @@ function App() {
   const [openWeatherResults, setOpenWeatherResults] = useState({});
 
   // Stores an Array of data from Open Weather
-  let [openWeatherForecastResults, setOpenWeatherForecastResults] = useState([]);
+  const [openWeatherForecastResults, setOpenWeatherForecastResults] = useState([]);
 
   // Stores boolean if the current forecast should display
   const [displayCurrentForecast, setDisplayCurrentForecast] = useState(false);
@@ -31,7 +31,6 @@ function App() {
   // Stores boolean if the pre content message should display
   const [preContent, setPreContent] = useState(true);
 
-  const testArray = [];
 
   // Stores boolean for if there is an API error. If so it triggers a front end alert
   const [apiErr, setApiErr] = useState(false);
@@ -47,6 +46,17 @@ function App() {
     const time = month + ' / ' + date + ' / ' + year;
     return time;
   };
+
+  const testArray = []
+
+  function processForecast(event) {
+    console.log(event);
+    for (event = 2; event < 35; event += 8) {
+      // setOpenWeatherForecastResults(event)
+      testArray.push(event);
+    }
+    console.log(testArray)
+  }
 
 
   const submitSearch = async (event) => {
@@ -102,15 +112,8 @@ function App() {
 
     axios.get(openWeatherForecastUrl)
       .then((res) => {
-
-
         let futureForecastArray = res.data.list;
-
-        console.log(futureForecastArray);
-        console.log(futureForecastArray[0].weather[0].icon);
-
-
-        setOpenWeatherForecastResults(futureForecastArray);
+        processForecast(futureForecastArray)
 
         // for (openWeatherForecastResults = 2; openWeatherForecastResults < 35; openWeatherForecastResults += 8) {
 
@@ -164,7 +167,7 @@ function App() {
           {displayFutureForecast ? <h4>5 Day Forecast</h4> : null}
           <div className="columns forecast__main">
             {/* This generates 5 forecast cards */}
-            {openWeatherForecastResults.map((e) => (
+            {/* {openWeatherForecastResults.map((e) => (
               <FutureDayForecast
                 displayFutureForecast={displayFutureForecast}
                 key={e.dt}
@@ -175,7 +178,7 @@ function App() {
                 humidity={Math.floor(e.main.humidity)}
               />
             )
-            )}
+            )} */}
           </div>
 
         </section>
